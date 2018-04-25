@@ -1,0 +1,87 @@
+{{> header}}
+<div class="material-blog mdl-layout mdl-js-layout">
+
+      {{> navbar}}
+
+  <main class="mdl-layout__content">
+<div class="material-blog__posts mdl-grid">
+
+        <h1 class="main__title">Blog</h1>
+
+        {{# each pagination.files }}
+        <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
+          <div class="mdl-card__media mdl-color-text--grey-50">
+            <!-- <h3><a href="{{ site_url this.path }}">{{ this.title }}</a></h3> -->
+            <h3><a href="/{{ this.path }}">{{ this.title }}</a></h3>
+          </div>
+          <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            {{ post__excerpt this.contents }}
+          </div>
+
+
+
+          <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+            <div class="minilogo"></div>
+            <div>
+              <strong>Joost van der Laan</strong>
+              <span class="post__date"><time datetime="{{ moment this.date "ISO" }}">{{ moment this.date "dddd" }} <strong>{{ moment this.date "D" }} <abbr title="{{ moment this.date "MMMM" }}">{{ moment this.date "MMM" }}</abbr> {{ moment this.date "YYYY" }}</strong></time></span>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+
+        {{!-- {{# either pagination.next pagination.previous }}
+        <div class="pagination">
+            {{# if pagination.next }}
+            <a href="{{ site_url pagination.next.path }}" class="button pagination__older">Older</a>
+            {{/ if }}
+            {{# if pagination.previous }}
+            <a href="{{ site_url pagination.previous.path }}" class="button pagination__newer">Newer</a>
+            {{/ if }}
+        </div>
+        {{/ either }}
+
+
+
+          <a href="entry.html" class="demo-nav__button" title="show more">
+            More
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_forward</i>
+            </button>
+          </a> --}}
+
+
+          {{# either pagination.next pagination.previous }}
+          
+            <nav class="demo-nav mdl-cell mdl-cell--12-col">
+
+              {{# if pagination.next }}
+              <div class="section-spacer"></div>
+              <a href="{{ site_url pagination.next.path }}" class="demo-nav__button" title="show older">
+                Older
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                  <i class="material-icons" role="presentation">arrow_forward</i>
+                </button>
+              </a>
+              {{/ if }}
+              {{# if pagination.previous }}
+              <a href="{{ site_url pagination.previous.path }}" class="demo-nav__button" title="show newer">
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                  <i class="material-icons" role="presentation">arrow_back</i>
+                </button>
+                Newer
+              </a>
+              <div class="section-spacer"></div>
+              {{/ if }}
+            </nav>
+
+          {{/ either }}
+
+
+
+
+</<div>
+
+</div>
+
+{{> footer}}

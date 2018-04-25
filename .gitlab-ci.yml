@@ -1,0 +1,48 @@
+image: node:latest
+
+cache:
+  paths:
+   - node_modules/
+
+.default-cache: &default-cache
+  key: "ruby-235-with-yarn"
+  paths:
+    - vendor/ruby
+    - .yarn-cache/
+
+stages:
+  - test-build
+  - deploy
+
+variables:
+    TEST_DIR: "gatsby-blog"
+
+eslint:
+  image: node:8-alpine
+  stage: test-build
+  script:
+    - apk add --no-cache make gcc g++ python # https://github.com/mhart/alpine-node/issues/27
+    - apk add vips-dev fftw-dev --update-cache --repository https://dl-3.alpinelinux.org/alpine/edge/testing/ # for Sharp http://sharp.dimens.io/en/stable/install/
+    - npm install -g -s --no-progress yarn
+    - cd $TEST_DIR && yarn install
+    - yarn run lint
+  cache:
+    key: "$CI_BUILD_NAME"
+    paths:
+      - node_modules/
+  tags:
+    - docker
+
+pages:
+  stage: deploy
+  script:
+  - cd $TEST_DIR && yarn install -sg gatsby
+  - yarn install -q
+  - gatsby build
+  - mv public/ ..
+  # --prefix-links Only needed when using a GitLAb Pages domain (NOT Needed when using a custom domain)
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

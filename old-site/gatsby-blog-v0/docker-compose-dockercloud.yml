@@ -1,0 +1,15 @@
+version: '2'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "5000:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  joostvanderlaan-nl-web:
+    image: 'joostlaan/joostvanderlaan.nl:latest-gatsby'
+    mem_limit: 256m
+    container_name: joost
+    environment:
+      - VIRTUAL_HOST=joostvanderlaan.nl

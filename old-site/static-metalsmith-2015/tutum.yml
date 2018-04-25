@@ -1,0 +1,23 @@
+# Stack name: Joostvanderlaan.nl
+joostvanderlaan-haproxy:
+  image: tutum/haproxy:latest
+  deployment_strategy: emptiest_node
+  target_num_containers: 1
+  tags:
+    - production
+  restart: on-failure
+  ports:
+    - "80:80"
+  roles:
+    - global
+  links:
+    - "joostvanderlaan.nl:joostvanderlaan.nl"
+  environment:
+    BALANCE: source
+joostvanderlaan-web:
+  image: joostlaan/joostvanderlaan.nl:latest
+  deployment_strategy: high_availability
+  target_num_containers: 2
+  tags:
+    - production
+  restart: on-failure

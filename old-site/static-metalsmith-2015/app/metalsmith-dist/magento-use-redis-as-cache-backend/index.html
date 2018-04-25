@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>magento-use-redis-as-cache-backend</title>
+
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- styles/main.css is where we initially write all your CSS and then overwrite it with your critical path CSS. Your site-wide styles are in styles/site.css, which we async load in via JavaScript lower down in the page  -->
+        <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- build:js /scripts/main.min.js async defer -->
+    <script src="/scripts/fontfaceobserver.js"></script>
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- Async load Base64 fonts CSS and store in browser localStorage. DO NOT include in build: tags above -->
+    <!--  <script src="/scripts/fontloader.js"></script> -->
+
+    <!-- Async load cross-site CSS, mostly interesting for production. DO NOT include in build: tags above -->
+    <script>
+    function loadCSS(e,t,n){'use strict';var i=window.document.createElement('link');var o=t||window.document.getElementsByTagName('script')[0];i.rel='stylesheet';i.href=e;i.media='only x';o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||'all';});}
+    loadCSS('/styles/site.css');
+    </script>
+
+</head>
+
+<body>
+<div class="material-blog material-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"> Joostvanderlaan.nl</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <div class="material-drawer mdl-layout__drawer">
+    <span class="mdl-layout-title"> Joostvanderlaan.nl</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/blog">Blog</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+
+    <div class="demo-back">
+      <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/blog" title="go back" role="button">
+        <i class="material-icons" role="presentation">arrow_back</i>
+      </a>
+    </div>
+
+    <div class="material-blog__posts mdl-grid">
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__media mdl-color-text--grey-50">
+          <h3>magento-use-redis-as-cache-backend</h3>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+          <div class="minilogo"></div>
+          <div>
+            <strong>Joost van der Laan</strong>
+            <!-- <span>2 days ago</span> -->
+            <span class="post__date">
+              <time datetime="2012-10-01T00:00:00.000Z">Monday
+                <strong>1
+                  <abbr title="October">Oct</abbr> 2012</strong>
+              </time>
+            </span>
+          </div>
+          <div class="section-spacer"></div>
+          <div class="meta__favorites">
+            425 <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">bookmark</i>
+            <span class="visuallyhidden">bookmark</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">share</i>
+            <span class="visuallyhidden">share</span>
+          </div>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+          <p>Magento – use Redis as cache backend</p>
+<p>We will configure Magento to use Redis as main cache backend.</p>
+<ol>
+<li><p>Install Redis. (2.4 is required because it supports operating on multiple keys for many operations)</p>
+</li>
+<li><p>Install <a href="https://github.com/nicolasff/phpredis" target="_blank">phpredis</a>. <a href="https://github.com/nicolasff/phpredis" target="_blank">Phpredis</a> is optional, but it is much faster than <a href="https://github.com/jdp/redisent" target="_blank">Redisent</a>.</p>
+</li>
+<li><p>Install this module <a title="git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git" href="git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git" target="_blank">git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git</a></p>
+</li>
+<li><p>Edit <strong>app/etc/local.xml</strong> to configure</p>
+</li>
+</ol>
+<p>Based on this article we have turned off cache disk :</p>
+<p><pre class="lang:default decode:true">&amp;lt;cache&amp;gt;</p>
+<p>&amp;lt;backend&amp;gt;Zend_Cache_Backend_Redis&amp;lt;/backend&amp;gt;</p>
+<p>&amp;lt;slow_backend&amp;gt;database&amp;lt;/slow_backend&amp;gt;</p>
+<p>&amp;lt;slow_backend_store_data&amp;gt;0&amp;lt;/slow_backend_store_data&amp;gt;</p>
+<p>&amp;lt;auto_refresh_fast_cache&amp;gt;0&amp;lt;/auto_refresh_fast_cache&amp;gt;</p>
+<p>&amp;lt;backend_options&amp;gt;</p>
+<p>&amp;lt;server&amp;gt;127.0.0.1&amp;lt;/server&amp;gt;</p>
+<p>&amp;lt;port&amp;gt;6379&amp;lt;/port&amp;gt;</p>
+<p>&amp;lt;database&amp;gt;database&amp;lt;/database&amp;gt;</p>
+<p>&amp;lt;use_redisent&amp;gt;0&amp;lt;/use_redisent&amp;gt; &amp;lt;!-- 0 for phpredis, 1 for redisent --&amp;gt;</p>
+<p>&amp;lt;automatic_cleaning_factor&amp;gt;20000&amp;lt;/automatic_cleaning_factor&amp;gt; &amp;lt;!-- optional, 20000 is the default, 0 disables auto clean --&amp;gt;</p>
+<p>&amp;lt;/backend_options&amp;gt;</p>
+<p>&amp;lt;/cache&amp;gt;</pre>
+To check if everything works fine you can use redis-cli :</p>
+<p><pre class="lang:default decode:true">root@vm:~$ redis-cli</p>
+<p>redis 120.0.01:6379&amp;gt; select database</p>
+<p>OK</p>
+<p>redis 127.0.0.1:6379&amp;gt; keys *</p>
+<p>1) &quot;zc:d:97a_REC_0000000510&quot;</p>
+<p>2) &quot;zc:d:97a_REC_0000000511&quot;</p>
+<p>3) &quot;zc:d:97a_REC_0000001240&quot;</p>
+<p>4) &quot;zc:d:97a_REC_0000000512&quot;</p>
+<p>.......</pre>
+As you can see, there are a lot of cache indexes in Redis database.</p>
+<p>Source code : link</p>
+<p>Benchmark class : benchmark.php</p>
+<p>via <a href="http://blog.flexishore.com/2011/09/magento-use-redis-as-cache-backend/">Magento – use Redis as cache backend | Flexishore&#39;s Blog</a>.</p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer--left-section">
+      </div>
+      <div class="mdl-mini-footer--right-section">
+        <small>Built with love by
+          <span itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Joost van der Laan</span> <a href="https://twitter.com/javdl" target="_blank">@javdl</a>
+          </span>
+        </small>
+      </div>
+    </footer>
+    
+    </main>
+    </div>
+    </body>
+    </html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colin Mollenhour: Benchmarking Zend_Cache backends for Magento</title>
+
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- styles/main.css is where we initially write all your CSS and then overwrite it with your critical path CSS. Your site-wide styles are in styles/site.css, which we async load in via JavaScript lower down in the page  -->
+        <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- build:js /scripts/main.min.js async defer -->
+    <script src="/scripts/fontfaceobserver.js"></script>
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- Async load Base64 fonts CSS and store in browser localStorage. DO NOT include in build: tags above -->
+    <!--  <script src="/scripts/fontloader.js"></script> -->
+
+    <!-- Async load cross-site CSS, mostly interesting for production. DO NOT include in build: tags above -->
+    <script>
+    function loadCSS(e,t,n){'use strict';var i=window.document.createElement('link');var o=t||window.document.getElementsByTagName('script')[0];i.rel='stylesheet';i.href=e;i.media='only x';o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||'all';});}
+    loadCSS('/styles/site.css');
+    </script>
+
+</head>
+
+<body>
+<div class="material-blog material-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"> Joostvanderlaan.nl</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <div class="material-drawer mdl-layout__drawer">
+    <span class="mdl-layout-title"> Joostvanderlaan.nl</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/blog">Blog</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+
+    <div class="demo-back">
+      <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/blog" title="go back" role="button">
+        <i class="material-icons" role="presentation">arrow_back</i>
+      </a>
+    </div>
+
+    <div class="material-blog__posts mdl-grid">
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__media mdl-color-text--grey-50">
+          <h3>Colin Mollenhour: Benchmarking Zend_Cache backends for Magento</h3>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+          <div class="minilogo"></div>
+          <div>
+            <strong>Joost van der Laan</strong>
+            <!-- <span>2 days ago</span> -->
+            <span class="post__date">
+              <time datetime="2012-10-01T00:00:00.000Z">Monday
+                <strong>1
+                  <abbr title="October">Oct</abbr> 2012</strong>
+              </time>
+            </span>
+          </div>
+          <div class="section-spacer"></div>
+          <div class="meta__favorites">
+            425 <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">bookmark</i>
+            <span class="visuallyhidden">bookmark</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">share</i>
+            <span class="visuallyhidden">share</span>
+          </div>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+          <p>Benchmarking Zend_Cache backends for Magento</p>
+<p>The Zend_Cache module from the Zend Framework is a nice piece of work. It has a slew of programmer-friendly frontends and a respectable set of backends with a well-designed interface. I love the a-la-carte approach, but I am only really interested in the Zend_Cache_Core frontend and the backends that support tagging since that is what is required by Magento. This begs the question, which backend should you use? While I have my own opinion on that matter (ahem, Redis. -post coming soon-ish), I wanted a reliable way to test Zend_Cache backend performances so I wrote a benchmark! This benchmark was both forked from and inspired by the benchmark found in Vinai Kopp’s Symlink Cache. It uses Magento’s core/cache model rather than Zend_Cache_Core directly so a Magento (or Magento-lite) installation and bash are the only requirements.</p>
+<p>The purpose of this post is not to provide a bunch of cache backend benchmarks, but rather to simply introduce my benchmark code in the hopes that others conduct their own tests and hopefully publish their findings. A link to this post is appreciated. Also, if there are any criticisms of the benchmark I’d love to see a pull request. :)</p>
+<p>The benchmark suite is fully-featured:</p>
+<p>Repeatable tests. Dataset is written to static files so the exact same test can be repeated, even with entirely different backends.</p>
+<p>Test datasets can easily be zipped up and copied to different environments or shared for others to use.</p>
+<p>Can relatively easily test multiple pre-generated datasets to compare different scenarios on the same hardware.</p>
+<p>Uses true multi-process benchmarking, each process with a different set of random operations.</p>
+<p>Flexible dataset generation via options to init command. Cache record data size, number of tags, expiration, popularity and volatility are all randomized.</p>
+<p>Currently the benchmarks are run via the command line so testing the APC backend or any others that only work via a cgi or apache module environment will not work. This could be remedied easily enough with the use of CuRL and some php copy/paste if you had the desire to test on your actual web server.</p>
+<p>Here is an example run using the Redis backend using my dev environment, a Lubuntu VirtualBox guest:
+<code>
+Cache Backend: Zend_Cache_Backend_Redis</p>
+<p>Loading &#39;default&#39; test data...</p>
+<p>Loaded 10000 cache records in 29.1080 seconds. Data size is 5008.9K</p>
+<p>Analyzing current cache contents...</p>
+<p>Counted 10023 cache IDs and 2005 cache tags in 0.2062 seconds</p>
+<p>Benchmarking getIdsMatchingTags...</p>
+<p>Average: 0.00036 seconds (36.82 ids per tag)</p>
+<p>Benchmarking 4 concurrent clients, each with 100000 operations...</p>
+<p>4 concurrent clients completed in 62 seconds</p>
+<p>| reads| writes| cleans</p>
+<hr>
+<p>Client 1| 1811.83| 184.66| 6.81</p>
+<p>Client 2| 1799.84| 165.29| 6.91</p>
+<p>Client 3| 1818.90| 165.17| 6.79</p>
+<p>Client 0| 1790.91| 153.56| 7.40</p>
+<hr>
+<p>ops/sec | 7221.48| 668.68| 27.91</code></p>
+<p>The important numbers to look at are the summed ops/sec. Given the three variables: dataset, hardware and backend, it is easy to change just one of these without affecting the others so this benchmark can be used to test any one of the three variables reliably. The three metrics observed are reads, writes and cleans. The first two are pretty self-explanatory. The third is a clean operation on a single tag using Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG which is the only mode Magento ever uses other than Zend_Cache::CLEANING_MODE_ALL for manual cache refreshes. Individual read/write operations are very fast so given the large number of operations in a test I did not feel the need to examine min, max, average, or standard deviations.</p>
+<p>The test uses (hopefully) sane defaults for dataset generation parameters, but there is plenty of flexibility. I advise you to examine your production environment (number of cache keys, number of cache tags, number of concurrent clients) to tweak the test to more closely match your own environment. Here is the output of the --help cli parameter:
+<code>
+$ php shell/cache-benchmark.php --help</p>
+<p>This script will either initialize a new benchmark dataset or run a benchmark.</p>
+<p>Usage: php -f shell/cache-benchmark.php [command] [options]</p>
+<p>Commands:</p>
+<p>init [options] Initialize a new dataset.</p>
+<p>load --name &lt;string&gt; Load an existing dataset.</p>
+<p>clean Flush the cache backend.</p>
+<p>tags Benchmark getIdsMatchingTags method.</p>
+<p>ops [options] Execute a pre-generated set of operations on the existing cache.</p>
+<p>&#39;init&#39; options:</p>
+<p>--name &lt;string&gt; A unique name for this dataset (default to &quot;default&quot;)</p>
+<p>--keys &lt;num&gt; Number of cache keys (default to 10000)</p>
+<p>--tags &lt;num&gt; Number of cache tags (default to 2000)</p>
+<p>--min-tags &lt;num&gt; The min number of tags to use for each record (default 0)</p>
+<p>--max-tags &lt;num&gt; The max number of tags to use for each record (default 15)</p>
+<p>--min-rec-size &lt;num&gt; The smallest size for a record (default 1)</p>
+<p>--max-rec-size &lt;num&gt; The largest size for a record (default 1024)</p>
+<p>--clients &lt;num&gt; The number of clients for multi-threaded testing (defaults to 4)</p>
+<p>--seed &lt;num&gt; The random number generator seed (default random)</p>
+<p>&#39;ops&#39; options:</p>
+<p>--name &lt;string&gt; The dataset to use (from the --name option from init command)</p>
+<p>--client &lt;num&gt; Client number (0-n where n is --clients option from init command)</p>
+<p>-q|--quiet Be less verbose.</code></p>
+<p>To handle multi-process benchmarking the test is actually launched from a shell script which backgrounds each client and sums the results using awk so unless you are doing single-process benchmarks you never need to invoke the ‘ops’ command yourself.</p>
+<p>Give me the code already!</p>
+<p>The code is hosted at github.com/colinmollenhour/magento-cache-benchmark. If you use modman you can install it like so:</p>
+<p>modman cachebench clone git://github.com/colinmollenhour/magento-cache-benchmark.git</p>
+<p>Or, you may also download it directly and just extract cache-benchmark.php to the “shell” folder in your Magento installation.</p>
+<p>Run a test!</p>
+<p>Assuming you’ve cloned/downloaded the code already, here is how you run your first test:</p>
+<p>php shell/cache-benchmark.php init</p>
+<p>bash var/cachebench/default/run.sh</p>
+<p>Could it get any easier?</p>
+<p>PS. I included a “Null” backend which is just a black hole for the purpose of getting a general idea of your PHP overhead.</p>
+<p>via <a href="http://colin.mollenhour.com/2011/10/03/benchmarking-zend_cache-backends-for-magento/">Colin Mollenhour&#39;s Technical Blog » Benchmarking Zend_Cache backends for Magento</a>.</p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer--left-section">
+      </div>
+      <div class="mdl-mini-footer--right-section">
+        <small>Built with love by
+          <span itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Joost van der Laan</span> <a href="https://twitter.com/javdl" target="_blank">@javdl</a>
+          </span>
+        </small>
+      </div>
+    </footer>
+    
+    </main>
+    </div>
+    </body>
+    </html>

@@ -1,0 +1,8 @@
+/*ie5*/
+.comments ul li .comment {  margin: -19px 0 0 87px; zoom:1;}
+
+.baloon {  left: -21px;}
+
+.contact_form label, #comment-form label {  width:105px;}
+.contact_form input, #comment-form input {  height:33px; width:540px;}
+.contact_form textarea, #comment-form textarea {  height: 99px;width:540px;}

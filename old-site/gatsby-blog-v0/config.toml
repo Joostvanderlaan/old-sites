@@ -1,0 +1,14 @@
+siteTitle = "Joost van der Laan"
+siteDescr = "Interesting things that keep me productive & effective. In short; get things done."
+siteAuthor = "Joost van der Laan"
+
+siteTelegramUrl = "#"
+siteTwitterUrl = "#"
+siteGithubUrl = "https://github.com/Joostvanderlaan"
+siteEmailUrl = "#"
+siteRssUrl = "#"
+# siteVkUrl = "#"
+
+linkPrefix = "/gatsby-starter-lumen"
+
+twitterHandle = "@javdl"

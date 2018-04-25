@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>magento-1-7-nginx-configuration</title>
+
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- styles/main.css is where we initially write all your CSS and then overwrite it with your critical path CSS. Your site-wide styles are in styles/site.css, which we async load in via JavaScript lower down in the page  -->
+        <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- build:js /scripts/main.min.js async defer -->
+    <script src="/scripts/fontfaceobserver.js"></script>
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- Async load Base64 fonts CSS and store in browser localStorage. DO NOT include in build: tags above -->
+    <!--  <script src="/scripts/fontloader.js"></script> -->
+
+    <!-- Async load cross-site CSS, mostly interesting for production. DO NOT include in build: tags above -->
+    <script>
+    function loadCSS(e,t,n){'use strict';var i=window.document.createElement('link');var o=t||window.document.getElementsByTagName('script')[0];i.rel='stylesheet';i.href=e;i.media='only x';o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||'all';});}
+    loadCSS('/styles/site.css');
+    </script>
+
+</head>
+
+<body>
+<div class="material-blog material-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"> Joostvanderlaan.nl</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <div class="material-drawer mdl-layout__drawer">
+    <span class="mdl-layout-title"> Joostvanderlaan.nl</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/blog">Blog</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+
+    <div class="demo-back">
+      <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/blog" title="go back" role="button">
+        <i class="material-icons" role="presentation">arrow_back</i>
+      </a>
+    </div>
+
+    <div class="material-blog__posts mdl-grid">
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__media mdl-color-text--grey-50">
+          <h3>magento-1-7-nginx-configuration</h3>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+          <div class="minilogo"></div>
+          <div>
+            <strong>Joost van der Laan</strong>
+            <!-- <span>2 days ago</span> -->
+            <span class="post__date">
+              <time datetime="2012-10-01T00:00:00.000Z">Monday
+                <strong>1
+                  <abbr title="October">Oct</abbr> 2012</strong>
+              </time>
+            </span>
+          </div>
+          <div class="section-spacer"></div>
+          <div class="meta__favorites">
+            425 <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">bookmark</i>
+            <span class="visuallyhidden">bookmark</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">share</i>
+            <span class="visuallyhidden">share</span>
+          </div>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+          <p>This config works for Magento version 1.7:</p>
+<p>```language-nginx
+server {
+        listen       80 deferred;
+                server_name  example.com;
+        root         /usr/share/nginx/magentofolder;</p>
+<pre><code>location / {
+        index                     index.html index.php;     ## Allow a static html file to be shown first
+        try_files                 $uri $uri/ @handler;     ## If missing pass the URI to Magento&#39;s front handler
+}
+
+location /admin/ {
+    client_body_timeout           3600;
+    keepalive_timeout             3600 3600;
+    send_timeout                  3600;
+    auth_basic           &quot;Restricted&quot;; ## Message shown in login window
+    auth_basic_user_file htpasswd; ## See /etc/nginx/htpassword
+    autoindex            on;
+}
+
+## These locations would be hidden by .htaccess normally
+    location /app/                { deny all; }
+    location /includes/           { deny all; }
+    location /lib/                { deny all; }
+    location /media/downloadable/ { deny all; }
+    location /pkginfo/            { deny all; }
+    location /report/config.xml   { deny all; }
+    location /var/                { deny all; }
+    location /lib/minify/         { allow all; }  ## Deny is applied after rewrites so must specifically allow minify
+
+location /var/export/ { ## Allow admins only to view export folder
+    auth_basic           &quot;Restricted&quot;; ## Message shown in login window
+    auth_basic_user_file htpasswd; ## See /etc/nginx/htpassword
+    autoindex            on;
+}
+
+    #### only use this if you use MAGMI
+location /magmi/ {
+    auth_basic           &quot;Restricted&quot;; ## Message shown in login window
+    auth_basic_user_file htpasswd; ## See /etc/nginx/htpassword
+    autoindex            on;
+    }
+
+location @handler { ## Magento uses a common front handler
+    rewrite / /index.php;
+}
+
+location ~ .php/ { ## Forward paths like /js/index.php/x.js to relevant handler
+    rewrite ^(.*.php)/ $1 last;
+}
+
+location ~ .php$ { ## Execute PHP scripts
+    # Zero-day exploit defense.
+    # http://forum.nginx.org/read.php?2,88845,page=3
+    # Won&#39;t work properly (404 error) if the file is not stored on this server, which is entirely possible with php-fpm/php-fcgi.
+    # Comment the &#39;try_files&#39; line out if you set up php-fpm/php-fcgi on another machine.  And then cross your fingers that you won&#39;t get hacked.
+    try_files         $uri =404;
+    expires        off; ## Do not cache dynamic content
+    fastcgi_pass   phpcgi;
+    fastcgi_index  index.php;
+    #fastcgi_param  HTTPS $fastcgi_https;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    fastcgi_param  MAGE_RUN_CODE default; ## Store code is defined in administration &gt; Configuration &gt; Manage Stores
+    fastcgi_param  MAGE_RUN_TYPE store;
+    include        fastcgi_params; ## See /etc/nginx/fastcgi_param
+    fastcgi_param HTTPS on;  #otherwize Magento doesn&#39;t know it&#39;s https and you&#39;ll create a redirect loop
+</code></pre><p>}</p>
+<p>}</p>
+<p>via Magento.</p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer--left-section">
+      </div>
+      <div class="mdl-mini-footer--right-section">
+        <small>Built with love by
+          <span itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Joost van der Laan</span> <a href="https://twitter.com/javdl" target="_blank">@javdl</a>
+          </span>
+        </small>
+      </div>
+    </footer>
+    
+    </main>
+    </div>
+    </body>
+    </html>

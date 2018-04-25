@@ -1,0 +1,2 @@
+FROM joostlaan/nginx-pagespeed
+COPY dist/ /var/www

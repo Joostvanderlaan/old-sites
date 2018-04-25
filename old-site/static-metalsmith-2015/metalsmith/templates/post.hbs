@@ -1,0 +1,50 @@
+{{> header}}
+<div class="material-blog material-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+  {{> navbar}}
+  <main class="mdl-layout__content">
+
+    <div class="demo-back">
+      <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/blog" title="go back" role="button">
+        <i class="material-icons" role="presentation">arrow_back</i>
+      </a>
+    </div>
+
+    <div class="material-blog__posts mdl-grid">
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__media mdl-color-text--grey-50">
+          <h3>{{title}}</h3>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+          <div class="minilogo"></div>
+          <div>
+            <strong>Joost van der Laan</strong>
+            <!-- <span>2 days ago</span> -->
+            <span class="post__date">
+              <time datetime="{{ moment date "ISO" }}">{{ moment date "dddd" }}
+                <strong>{{ moment date "D" }}
+                  <abbr title="{{ moment date "MMMM" }}">{{ moment date "MMM" }}</abbr> {{ moment date "YYYY" }}</strong>
+              </time>
+            </span>
+          </div>
+          <div class="section-spacer"></div>
+          <div class="meta__favorites">
+            425 <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">bookmark</i>
+            <span class="visuallyhidden">bookmark</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">share</i>
+            <span class="visuallyhidden">share</span>
+          </div>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+          {{{contents}}}
+        </div>
+      </div>
+
+    </div>
+
+    {{> footer}}

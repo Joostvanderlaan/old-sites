@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Golden Master List of Magento Performance Enhancements</title>
+
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="/images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- styles/main.css is where we initially write all your CSS and then overwrite it with your critical path CSS. Your site-wide styles are in styles/site.css, which we async load in via JavaScript lower down in the page  -->
+        <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- build:js /scripts/main.min.js async defer -->
+    <script src="/scripts/fontfaceobserver.js"></script>
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- Async load Base64 fonts CSS and store in browser localStorage. DO NOT include in build: tags above -->
+    <!--  <script src="/scripts/fontloader.js"></script> -->
+
+    <!-- Async load cross-site CSS, mostly interesting for production. DO NOT include in build: tags above -->
+    <script>
+    function loadCSS(e,t,n){'use strict';var i=window.document.createElement('link');var o=t||window.document.getElementsByTagName('script')[0];i.rel='stylesheet';i.href=e;i.media='only x';o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||'all';});}
+    loadCSS('/styles/site.css');
+    </script>
+
+</head>
+
+<body>
+<div class="material-blog material-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"> Joostvanderlaan.nl</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <div class="material-drawer mdl-layout__drawer">
+    <span class="mdl-layout-title"> Joostvanderlaan.nl</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/blog">Blog</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+
+    <div class="demo-back">
+      <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/blog" title="go back" role="button">
+        <i class="material-icons" role="presentation">arrow_back</i>
+      </a>
+    </div>
+
+    <div class="material-blog__posts mdl-grid">
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__media mdl-color-text--grey-50">
+          <h3>The Golden Master List of Magento Performance Enhancements</h3>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+          <div class="minilogo"></div>
+          <div>
+            <strong>Joost van der Laan</strong>
+            <!-- <span>2 days ago</span> -->
+            <span class="post__date">
+              <time datetime="2012-10-01T00:00:00.000Z">Monday
+                <strong>1
+                  <abbr title="October">Oct</abbr> 2012</strong>
+              </time>
+            </span>
+          </div>
+          <div class="section-spacer"></div>
+          <div class="meta__favorites">
+            425 <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">bookmark</i>
+            <span class="visuallyhidden">bookmark</span>
+          </div>
+          <div>
+            <i class="material-icons" role="presentation">share</i>
+            <span class="visuallyhidden">share</span>
+          </div>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+          <p>There are lots of tips, tricks and hacks on how to enhance Magento. A lot of them are good. Some are entirely wrong! And most do not have each and every update you must make to every single one of your sites in order to get it to achieve the fastest possible load times. This is a list to remedy that situation.</p>
+<p>Remember, all of these updates only apply to production environments. Feel free to post comments, updates and suggestions and I will keep this list up to date as much as I possible can. Hopefully, in time we can achieve a golden master list of performance enhancements!</p>
+<!--more-->
+<h4 id="legend">Legend</h4>
+<p>Verified, Tested &amp; Recommended for all installs</p>
+<p>Verified &amp; Tested. Recommendation varies based on application.</p>
+<h4 id="magento-configuration">Magento Configuration</h4>
+<h4 id="enable-caching">Enable Caching</h4>
+<p>System &gt; Cache Management &gt; Select All &gt; Enable</p>
+<p>This one is an absolute no-brainer and provides one of the best performance enhancements you will get in Magento. This caches the XML layer in Magento, along with some other information, to speed up PHP processing time.</p>
+<h4 id="merge-javascript-and-css-files-not-needed-if-using-fooman-speedster-module-">Merge JavaScript and CSS Files (Not needed if using Fooman Speedster module)</h4>
+<p>System &gt; Configuration &gt; Advanced &gt; Developer &gt; Javascript Settings &amp; CSS Settings</p>
+<p>Combines the many css and js files defined in Magento&#39;s XML layer into one large file for each (one for js, one for css). It speeds up your site because it reduces the number of http connections needed in order to fetch this data through a web browser.</p>
+<h4 id="compilation">Compilation</h4>
+<p>System &gt; Tools &gt; Compilation &gt; Run Compilation Process</p>
+<p>This option compiles all Magento installation files and creates a single include path. Remember to disable this module before upgrades. The compilation process may need to be ran again when new files are released. Recommended for high-volume websites or sites that are not often updated as it reduces PHP processing time and TTFB.</p>
+<h4 id="disable-logging">Disable Logging</h4>
+<p>System &gt; Configuration &gt; Advanced &gt; Developer &gt; Log Settings &gt; Enabled: No</p>
+<p>This is disabled by default, but be sure to double-check it is disabled on production environments, as this setting can drastically slow down your website if enabled.</p>
+<h4 id="enable-gzip">Enable Gzip</h4>
+<p>This is a must-have tweak. It decreases page size by over 30%, and takes a base Magento home page PageSpeed from a 32 to a 69! Make sure to enable the deflate module in your Apache configuration, then comment out the appropriate lines in the mod_deflate.c directive of your ~/.htaccess file.</p>
+<h4 id="minify-javascript">Minify JavaScript</h4>
+<p>Install the Fooman Speedster module</p>
+<p>The easiest way to minify your JavaScript is to install the Fooman Speedster module. This does everything you need to make sure all of your JavaScript is minified. It also merges your CSS and JavaScript files into one file each, so this replaces option #1 on this list.</p>
+<h4 id="enable-far-future-expires">Enable Far-Future Expires</h4>
+<p>Add ExpiresActive On and the following lines after the ExpiresDefault directive in your ~/.htaccess file</p>
+<p>These few lines add expires directives to your images and some other files. This tells the web browser to cache the contents for a period of time on these items, cutting down HTTP requests and load time for future visits. This is also a must-have and often overlooked tweak!!! These few lines took a Magento 1.6.1.0 site with a few of the above tweaks from a PageSpeed of a 70 to an 83! Also note, the default ExpiresDefault line should remain commented out to prevent long-term caching of dynamic PHP files.</p>
+<p>?</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>&lt;FilesMatch &quot;.(css|eot|flv|gif|htc|ico|jpg|jpeg|js|pdf|png|svg|swf|ttf|woff)$&quot;&gt;</p>
+<p>ExpiresActive On</p>
+<p>ExpiresDefault &quot;access plus 1 week&quot;</p>
+<p>&lt;/FilesMatch&gt;</p>
+<p>Enable Flat Catalog/Index</p>
+<p>System &gt; Index Management &gt; Enable All</p>
+<p>System &gt; Configuration &gt; Catalog &gt; Frontend, set Use Flat Catalog Category/Product to Yes</p>
+<p>If you have a large amount of products on your site (&gt;10,000), this update decreases load times on searches, product listings, etc. I can&#39;t see this ever slowing down your site, even with only one product, so no reason to not tackle this easy one.</p>
+<h4 id="server-side">Server Side</h4>
+<h4 id="install-enough-memory-2gb-minimum-">Install &quot;enough&quot; memory (2GB minimum)</h4>
+<p>Even if you have very little traffic, ie. less than 100 visits per day, plan on running a minimum of 2GB of memory. Anything more, plan accordingly. Once you hit about 16GB RAM, you will be hitting peak efficiency, and are better off scaling horizontally rather than vertically (more server nodes VS. working with current resources).</p>
+<h4 id="run-lightspeed-vs-apache">Run Lightspeed VS. Apache</h4>
+<p>For the most part, Lightspeed web server is a direct drop-in replacement for Apache. Virtual Host configurations stay the same, htaccess rules work, and just about everything else including modules and plugins work out of the box without any additional configuration. Lightspeed has a much lighter footprint than apache, as do many other web servers such as Nginx and Lighttpd, but Lightspeed involves little to no additional knowledge of server configurations or etc.</p>
+<h4 id="install-apc">Install APC</h4>
+<p>Install APC with the command line pecl install apc</p>
+<p>Also add the following cache handle to your app/etc/local.xml configuration file</p>
+<p>?</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>&lt;global&gt;</p>
+<p>...</p>
+<p>&lt;cache&gt;</p>
+<p>&lt;backend&gt;apc&lt;/backend&gt;</p>
+<p>&lt;prefix&gt;yourdomain<em>com</em>&lt;/prefix&gt;</p>
+<p>&lt;/cache&gt;</p>
+<p>...</p>
+<p>&lt;/global&gt;</p>
+<p>Just installing APC, with no configuration, whatsoever, decreased page load time by about 20% on my clean Magento install, and decreased TTFP by about 30%! APC is one of the best bytecode compressor&#39;s for PHP, and has been tried and true on many Magento installations so far, so there is no need to look elsewhere.</p>
+<h4 id="enable-keepalive-s">Enable KeepAlive&#39;s</h4>
+<p>Add the following lines to your Apache configuration file</p>
+<pre class="lang:apache decode:true " >
+KeepAlive On
+
+KeepAliveTimeout 2
+</pre>
+
+<p>Apache KeepAlive keeps the TCP connection open between the client and the server, allowing multiple requests to be served over the same connection. This removes some overhead with sites serving up a lot of concurrent HTTP requests.</p>
+<pre class="lang:apache decode:true " >Disable open_basedir</pre>
+
+
+<p>Add the following line to your Apache configuration file</p>
+<pre class="lang:apache decode:true " >php_admin_value open_basedir none
+</pre>
+
+<p>The open_basedir parameter is a security feature that restricts filesystem lookups, but can hurt performance on applications with a large filesystem footprint like Magento. Disable it to lower lstat lookups. Find out more about this setting by reading this article by Nexcess.</p>
+<h4 id="client-side">Client Side</h4>
+<h4 id="use-a-cdn">Use a CDN</h4>
+<p>This could fall under a Server Side upgrade, but the results are really drastic on the client side. A Content Delivery Network can improve your data cache, reduce latency, and increase redundancy for your web site. But the simple reason to use it is that it speeds up your website instantly. Ashley Schroder has a good article on integrating Magento with Amazon Cloudfront that makes it very simple to get up and running with a CDN, and Nexcess has a good article on setting up a CDN with Magento using their own CDN network.</p>
+<h4 id="database-related">Database Related</h4>
+<h4 id="enable-the-query-cache">Enable the Query Cache</h4>
+<p>Add the following lines to your /etc/my.conf file</p>
+<pre class="lang:default decode:true " >query_cache_type=1
+
+query_cache_size=64M</pre>
+
+
+<p>This caches a certain amount of MySQL statements so they do not need to be run again. Easy mod for a nice enhancement!</p>
+<h4 id="run-mysqltuner">Run MySQLTuner</h4>
+<pre class="lang:sh decode:true " >wget http://mysqltuner.com/mysqltuner.pl
+
+perl mysqltuner.pl</pre>
+
+
+<p>This perl script monitors your current MySQL install and provides recommendations and suggestions for tweaks to your my.cnf file. Very informative stuff here!</p>
+<p>via <a href="http://markshust.com/2012/02/13/golden-master-list-magento-performance-enhancements">The Golden Master List of Magento Performance Enhancements | Mark Shust</a>.</p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer--left-section">
+      </div>
+      <div class="mdl-mini-footer--right-section">
+        <small>Built with love by
+          <span itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Joost van der Laan</span> <a href="https://twitter.com/javdl" target="_blank">@javdl</a>
+          </span>
+        </small>
+      </div>
+    </footer>
+    
+    </main>
+    </div>
+    </body>
+    </html>

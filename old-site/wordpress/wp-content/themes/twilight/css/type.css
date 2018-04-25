@@ -1,0 +1,25 @@
+/*
+960px Grid Framework system.
+Typography 
+*/
+
+body {font-size:100%;font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#666}
+p {font-size:0.82em;font-weight: 300;line-height:20px;margin-bottom:1.5em;color:#666}
+h1, h2, h3, h4  {font-family:'LeagueGothicRegular', Arial, sans-serif;font-weight:bold;color:#666;margin-bottom:20px;}
+h1 {font-size:4.4em;letter-spacing:-2px}
+h2 {font-size:2.5em;}
+h3 {font-size:2em;}
+h4 {font-size:1em;}
+h5 {font-size:0.9em;}
+h6 {font-size:0.85em;} 
+a {color:#666;text-decoration:none;}
+a { -webkit-transition: color .4s ease-out; }
+a:hover{color:#666;text-decoration:underline}
+ul li{margin-bottom:20px;}
+ul, ol{margin-bottom:20px;}
+ul li {font-size:0.82em;margin-bottom:20px}
+strong {font-weight:bold;}
+em {font-style:italic;}
+img{margin-bottom:20px}
+
+		

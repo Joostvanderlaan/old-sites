@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{! The header when Post}}
+<header id="posthead_willsong" class="respowidth_willsong">
+	{{#if @blog.logo}}<a href="{{@blog.url}}"><img id="logo_willsong" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+		{{else}}<a id="blogname_willsong" href="{{@blog.url}}"><h1>{{@blog.title}}</h1></a>
+	{{/if}}
+</header>
+
+{{! MAIN content}}
+<section id="main_willsong" role="main">
+	
+	{{! POST content}}
+	{{#post}}
+	<article id="thearticle_willsong" class="respowidth_willsong" role="article" itemscope itemtype="http://schema.org/Article">
+				
+		<h2 class="posttitle_willsong" itemprop="headline">{{title}}</h2>
+			
+		<div class="postcontent_willsong">
+			{{content}}
+		</div>
+
+	</article>
+	{{/post}}
+	
+</section>
