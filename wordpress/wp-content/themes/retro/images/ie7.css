@@ -1,7 +1,0 @@
-/*ie7*/
-.contact_form input, #comment-form input {  margin-top: -1px;}
-.contact_form textarea, #comment-form textarea {  height: 97px;}
-
-.comments ul li .comment {  margin: -19px 0 0 87px;}
-
-.right .list li {clear: both;}
