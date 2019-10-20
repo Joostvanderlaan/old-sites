@@ -1,0 +1,99 @@
+
+    // graf = een content snippet, bijv. een titel, figure of p
+    // h1
+    article h1, .postArticle--full .graf--title.graf--leading {
+        padding-top: 16px;
+        // padding-top: 16px!important;
+    }
+    // 1e p medium.com
+    .postArticle-content .graf--p {
+        margin-top: 38px;
+    }
+    // 2e p medium.com
+    .graf--p.graf-after--blockquote, .postArticle-content .graf--p.graf-after--p, .postList+.graf--p {
+        margin-top: 29px;
+    }
+    // figure
+    @media (max-width: 839px) {
+        figure .graf--figure.graf-after--h4, .graf--mixtapeEmbed.graf-after--h4, .graf--pre.graf-after--h4 {
+            margin-top: 36px;
+        }
+        }
+        
+        @media (min-width: 840px) {
+        figure, .graf--figure.graf-after--h4, .graf--mixtapeEmbed.graf-after--h4, .graf--pre.graf-after--h4 {
+            margin-top: 44px;
+        }
+        }
+
+figure, img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.blogpost{
+    .title {
+            // font-family: $font-primary;
+            font-family: var(--font-primary);
+            font-weight: 300;
+    }
+p{
+    font-size: 18px;
+    line-height: 1.58;
+    letter-spacing: -.004em;
+}
+
+
+
+
+
+// needs work:
+hr.section-divider {
+    margin-top: 44px;
+    margin-bottom: 34px;
+    font-size: 24px;
+    line-height: 1.4;
+    display: block;
+    display: none;
+    border: 0;
+    text-align: center;
+    overflow: visible;
+}
+hr {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+    border: 0;
+}
+hr.section-divider:before {
+    font-family: medium-content-slab-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 30px;
+    letter-spacing: .6em;
+    content: '...';
+    display: inline-block;
+    margin-left: .6em;
+    color: rgba(0,0,0,.68);
+    position: relative;
+    top: -30px;
+}
+@media (min-width: 767px){
+    hr.section-divider {
+        margin-top: 52px;
+        margin-bottom: 42px;
+    }
+
+    p {
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+}
+}
+}

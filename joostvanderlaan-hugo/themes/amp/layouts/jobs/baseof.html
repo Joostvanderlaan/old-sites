@@ -1,0 +1,38 @@
+{{ partial "structure/head-amp" . }} {{/* Body starts inside head-amp */}}
+{{ partial "_shared/navigation" . }}
+<div></div>
+{{ block "hero" . }}
+    <header>
+        <div class="header-hero">
+            {{ if isset .Params "headerimage"}}
+            {{ partial "_shared/hero-image-srcset" . }}
+            {{ else }}
+            {{ partial "_shared/hero-image-srcset-default" . }}
+            {{ end }}
+    </header>
+    {{ end }}
+</div>
+    {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
+<main class="main-content" id="main-content">
+    <div class="grid mx-auto">
+        <div class="m2">
+            <div class="grid-wrapper">
+                {{ block "title" . }}
+                    <div class="grid-head">
+                        {{- partial "_shared/title" . -}}
+                    </div>
+                {{ end }}
+            {{/*  {{ block "breadcrumbs" . }}{{ end }}  */}}
+            <div class="grid-breadcrumbs">
+                {{ partial "navigation/breadcrumbs" . }}
+            </div>
+            {{ if (not (isset .Params "disablemenu")) }}
+            {{ block "sidebarmenu" . }}{{ end }}
+            {{ end }}
+            {{ block "main" . }}{{ end }}
+        </div>
+    </div>
+</div>
+</main>
+{{ partial "structure/footer" . }}
+{{ partial "structure/footer-amp" . }}

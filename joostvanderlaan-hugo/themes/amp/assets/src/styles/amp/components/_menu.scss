@@ -1,0 +1,26 @@
+.aside-nav {
+    // padding: 4px;
+    color: var(--black-medium);
+    font-family: var(--font-secondary);
+    // font-size:15px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+line-height: 1.6rem;
+
+li.active {
+    font-weight: 700;
+}
+
+ul li:before {
+    // padding: 8px;
+    padding: 4px;
+    color: var(--theme-primary);
+    content: "\00b7";
+    font-family: var(--font-secondary);
+    font-size:15px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+}

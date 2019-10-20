@@ -1,0 +1,141 @@
+// Architecture
+// https://zellwk.com/blog/css-architecture-3/
+
+// Reset and base files
+// --------------------
+@import 'lib/normalize';
+
+// Load fonts early. Fonts are allowed in AMP
+@import "font-face/rubik";
+
+// extra reset (see blogpost layout)
+// blockquote, dd, dl, figure, form, h1, h2, h3, h4, h5, h6, menu, ol, p, pre, ul {
+//   margin: 0;
+// }
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+// Libraries and helpers
+// ---------
+@import "./lib/mdc-typography-adapted-for-hugo";
+// @import '@material/layout-grid/mdc-layout-grid'; // ~17.3 KB  // Cannot use anything from MDC as it is TOO BIG
+
+// Mixins
+@import "mixins/css-grid";
+@import "mixins/multiline-ellipsis";
+
+// Variables
+// ---------
+// @import "variables/colors";
+// @import 'variables/typography';
+// @import 'variables/breakpoints';
+// @import 'variables/themes'; // only when necessary
+
+// AMPSTART
+// --------
+/* Basscss Modules */
+// https://github.com/basscss/basscss/blob/master/docs/GettingStarted.md
+// @import 'basscss/css/basscss.css';
+@import 'basscss-align/index.css';
+@import 'basscss-border/index.css';
+@import 'basscss-flexbox/index.css';
+@import 'basscss-grid/index.css';
+/* >> Use CSS Grid Instead >> needed for breakpoints navbar */
+// @import 'basscss-hide/index.css'; // contains !important, we cannot use that with AMP
+@import 'basscss-layout/index.css';
+@import 'basscss-margin/index.css';
+@import 'basscss-padding/index.css';
+@import 'basscss-position/index.css';
+@import 'basscss-type-scale/index.css';
+@import 'basscss-typography/index.css';
+
+/* Optional Modules (not included in Basscss by default) */
+// @import 'basscss-addons/modules/responsive-margin/index.css';
+// @import 'basscss-addons/modules/responsive-padding/index.css';
+
+// @import 'basscss-addons/modules/media-object/index.css';
+// @import 'basscss-addons/modules/all/index.css';
+// @import 'basscss-addons/modules/forms/index.css';
+// @import 'basscss-addons/modules/input-range/index.css';
+// @import 'basscss-addons/modules/progress/index.css';
+
+// @import 'basscss-addons/modules/btn/index.css';
+// @import 'basscss-addons/modules/btn-primary/index.css';
+// @import 'basscss-addons/modules/btn-outline/index.css';
+// @import 'basscss-addons/modules/btn-sizes/index.css';
+
+@import 'basscss-addons/modules/colors/index.css';
+// @import 'basscss-addons/modules/background-colors/index.css';
+// @import 'basscss-addons/modules/border-colors/index.css';
+// @import 'basscss-addons/modules/darken/index.css';
+// @import 'basscss-addons/modules/lighten/index.css';
+// @import 'basscss-addons/modules/background-images/index.css';
+
+@import 'components/navbar'; // Duplications in navbar and navigation
+
+@import 'variables/variables';
+// --------
+
+// // Layouts
+// // -------
+// @import 'layouts/layouts';
+@import 'layouts/grid-minmax';
+
+// // Objects
+// // -------
+// @import 'objects/buttons';
+// @import 'objects/input';
+// @import 'objects/typography';
+// // Other objects as necessary
+
+// // Components
+// // ----------
+@import "./components/typography";
+@import "./components/anchors";
+@import "./components/elevation";
+@import 'components/article';
+@import "./components/author";
+@import "./components/hero";
+@import "./components/breadcrumbs";
+@import "./components/navigation";
+@import "./components/menu";
+@import "./components/main";
+@import "./components/mdc-branding"; // card grid a no underline, logo sizing etc.
+// @import "./components/mdc-data-table";
+@import "./components/card";
+@import "./components/button";
+@import "./components/tabs";
+@import "./components/accordion";
+@import "./components/footer";
+@import "./components/figure";
+@import "./components/blogpost";
+@import "./components/tags";
+@import "./components/grid";
+@import "./components/hide";
+
+@import "./components/employer-branding-page";
+
+@import "./components/amp/image";
+
+@import "./components/list"; // used with Embedder, though really BIG
+@import "./components/embedder/embedder";
+
+@import "./components/highlight-syntax"; // this needs to move and only be included in /developers section, that will make css smaller for most pages.
+
+// @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width
+
+.mdc-list-item__secondary-text,
+.mdc-list-item__text {
+    white-space: initial;
+}
+
+
+// main {
+//   margin: 55px auto;
+// }
+
+.list-reset {
+    // fix footer list
+    padding-inline-start: 40px;
+}

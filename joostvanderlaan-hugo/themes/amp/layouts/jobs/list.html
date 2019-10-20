@@ -1,0 +1,41 @@
+{{ define "header"}}
+{{- partial "_shared/navigation" . -}}
+{{ end }}
+{{ define "nav" }}
+{{- partial "_shared/menu-jobs.html" . -}}
+{{ end }}
+{{ define "main" }}
+<section class="grid-content recent-posts">
+    {{ .Content }}
+            <div class="section-title">                                
+            </div>            
+            <div class="row listrecent">
+                <div class="grid-container-cards">
+                {{ range where .Paginator.Pages "Params.hidden" "ne" "true" }}
+                    {{- partial "list/card" . -}}
+                {{end}}
+            </div>
+            </div>
+        </section>
+
+{{/*  <div class="grid-content">
+{{ .Content}}
+<section class="grid-container-logos">
+        {{ range where .Paginator.Pages "Params.hidden" "ne" "true" }}
+        <div class="m2 p3 logo mdc-elevation--z1">
+        <a href="{{.RelPermalink }}" target="_self" class="card__primary-action">
+            <div class="logo-media flex justify-center">
+                    <img class="self-center" src="{{ if ne .Params.staticdir true }}{{.RelPermalink }}{{end}}{{ .Params.logo }}" alt="{{.Title}}">
+            </div>
+        </a>
+    </div>
+        {{ end }}
+</section>  */}}
+</div>
+
+<!-- <aside class="grid-sidebar"></aside>
+<div class="grid-ad"></div>
+<footer class="grid-footer"></footer> -->
+{{ end }}
+{{ define "footer"}}
+{{ end }}

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "production": "joostvanderlaan-nl",
+    "staging": "joostvanderlaan-qa"
+  }
+}

@@ -1,0 +1,35 @@
+.outer-glow {
+box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.3);
+}
+
+// https://material.io/design/environment/elevation.html#
+
+// Nav drawer: 16dp
+// App bar: 4dp
+// Card: 1dp to 8dp
+// FAB: 6dp
+// Button: 2dp to 8dp
+// Dialog: 24dp
+
+.mdc-elevation--z1 {
+box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.mdc-elevation--z2 {
+box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+.mdc-elevation--z4 {
+box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.mdc-elevation--z6 {
+box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.mdc-elevation--z12 {
+// box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.3);
+box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12);
+}
+
+.mdc-elevation--z16 {
+box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+}
+

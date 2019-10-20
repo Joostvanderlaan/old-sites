@@ -1,0 +1,32 @@
+.imageCaption {
+    font-family: var(--font-primary);
+    color: var(--black-light);
+    letter-spacing: -.02em;
+    font-weight: 300;
+    font-style: normal;
+    font-feature-settings: "liga" on,"lnum" on;
+    -moz-font-feature-settings: "liga" on,"lnum" on;
+    -webkit-font-feature-settings: "liga" on,"lnum" on;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0;
+}
+.imageCaption {
+    position: relative;
+    left: 0;
+    width: 100%;
+    top: 0;
+    outline: 0;
+    // text-align: center;
+    z-index: 300;
+}
+
+// @media (max-width: 839px) {
+// figure .graf--figure, .graf--mixtapeEmbed, .graf--pre {
+//     margin-top: 44px;
+// }
+// }
+
+// figure .graf--figure, .graf--mixtapeEmbed, .graf--pre {
+//     margin-top: 52px;
+// }

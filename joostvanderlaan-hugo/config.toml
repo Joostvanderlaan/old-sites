@@ -1,0 +1,154 @@
+baseURL = "https://joostvanderlaan.nl/"
+languageCode = "en-us"
+title = "Joost van der Laan"
+
+# J
+theme = "amp"
+description = "Interesting things that keep me productive & effective."
+
+ignoreFiles = ["content/posts/\\.*","content/portfolio/\\.*","content/product/\\.*","content/sketch/\\.*","content/en/\\.*","content/fr/\\.*"]
+author = "Joost van der Laan"
+copyright = "Copyright © 2007–2019, Joost van der Laan; all rights reserved." # 2007 joostvanderlaan.nl domain registered
+paginate = 3
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+[menu]
+
+# JOOST
+  [[menu.main]]
+    identifier = "blog"
+    name = "Demo Blog"
+    url = "/blog/"
+    weight = 50
+
+  [[menu.main]]
+    identifier = "articles"
+    name = "articles"
+    url = "/articles/"
+    weight = 10
+
+  [[menu.footer1]]
+    identifier = "home"
+    name = "home"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/"
+    weight = -110
+
+  [[menu.footer1]]
+    identifier = "articles"
+    name = "articles"
+    url = "/articles/"
+    weight = 40
+
+  [[menu.footer1]]
+    identifier = "blog"
+    name = "demo blog"
+    url = "/blog/"
+    weight = 70 
+
+  [[menu.footer1]]
+    identifier = "privacy"
+    name = "privacy policy"
+    url = "/privacy/"
+    weight = 80
+
+  [[menu.footer1]]
+    identifier = "terms"
+    name = "terms of service"
+    url = "/conditions/"
+    weight = 90
+
+  [[menu.footer1]]
+    identifier = "about"
+    name = "about"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/about/"
+    weight = 100
+
+  [[menu.footer2]]
+    identifier = "typography"
+    name = "typography"
+    url = "/typography/"
+    weight = 10
+  
+  [[menu.footer2]]
+    identifier = "styleguide"
+    name = "styleguide"
+    url = "/styleguide/"
+    weight = 10
+
+# [languages.en]
+# weight = 0
+# languageName = "English"
+
+# [[languages.en.menu.main]]
+# url    = "/"
+# name   = "Home"
+# weight = 0
+
+# [[languages.en.menu.footer1]]
+#     identifier = "about"
+#     name = "About"
+#     url = "/about/"
+#     weight = 10
+
+[params]
+  images = ["/assets/opengraph-1200x630.jpg"] # OpenGraph
+  # title = "My cool site" # OpenGraph
+  locale = "en-US"
+  amp = true # enables amp features
+  ampCdnRoot = "https://cdn.ampproject.org/" # defined base cdn root of the amp projects files
+  ampRelease = "v0" # define amp release you want to use
+  ampElementsVersion = "0.1" # define amp-elements version you want to use
+  ampElements = ["amp-sidebar","amp-analytics"] # define which amp-elements you are using globally, these elements will be included in every page. To keep pages as small as possible, SET others PER PAGE, not here.
+  themeColor = "#FFFFFF" # define a theme color (this will colorize the android address-bar)
+  # adsensePublisher = "pub-1234567890123456" # ca-pub-123456789 required if you want to include google adsense
+  # googleAnalytics = "UA-123456-78" # required if you want to use google analytics
+  googleTagManager = "GTM-MDMZ2WW" # non-AMP "GTM-N3WWJLK" # UA-1617166-1
+  # appleItunesApp = "app-id=123456789, app-argument=app-name://link/to/app-content" # required if you want to add an app banner with iOS app
+  # ampManifest = "/amp-manifest.json" # required if you want to add the app-banner feature
+  alternatePageName = "Joost van der Laan AMP" # alternative name for website structured data
+  organizationLogo = "https://joostvanderlaan.nl/assets/logo-600x51.png" # set organization logo for structured data
+  organizationName = "joostvanderlaan.nl" # set organization name
+  organizationAddress = "Amsterdam" # set organization address
+  # socialProfiles = ["https://www.facebook.com/Joost van der Laan/","http://instagram.com/yourProfile","http://www.linkedin.com/in/yourprofile","http://plus.google.com/your_profile"]  # https://twitter.com/Joost van der Laan for sameAs in organization's structured data
+  publisherName = "Joost van der Laan" # publisher used in article schema
+  publisherLogo = "https://joostvanderlaan.nl/assets/logo-600x51.png" # https://developers.google.com/search/docs/data-types/articles#logo-guidelines
+  publisherLogoWidth = 600 # logo width
+  publisherLogoHeight = 51 # logo height
+
+# JOOST END
+
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true

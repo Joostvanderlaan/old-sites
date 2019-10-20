@@ -1,0 +1,12 @@
+# Build Output
+dist
+.next
+.vscode
+.DS_Store
+out
+
+# Dependencies
+node_modules/
+package-lock.json
+config.json
+.bit

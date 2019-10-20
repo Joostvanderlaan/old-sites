@@ -1,0 +1,117 @@
+{{ if ne .Params.amp.enable false }}
+{{/*  {{ $sassTemplate := resources.Get "sass/jobs-template.scss" }}
+    {{ $jobsstyle := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | resources.Minify}}  */}}
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        {{ partial "stylesheet" | safeCSS }}
+        {{ if eq .Type "jobs" }}
+ :root {
+    {{if .Params.theme_primary_ebp}}--theme-primary-ebp:{{ index .Params "theme_primary_ebp" }};{{else}}{{end}}
+    {{if .Params.theme_secondary_ebp}}--theme-secondary-ebp:{{ index .Params "theme_secondary_ebp" }};{{else}}{{end}}
+    
+    --primary-font-family-ebp:{{ if isset .Params "primary_font_family_ebp" }}{{ .Params.primary_font_family_ebp | safeCSS }}, {{ end }}-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    --secondary-font-family-ebp:{{ if isset .Params "secondary_font_family_ebp" }}{{ .Params.secondary_font_family_ebp | safeCSS }}, {{ end }}-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    --primary_font_weight_ebp:{{ if isset .Params "primary_font_weight_ebp" }}{{ .Params.primary_font_weight_ebp | safeCSS }}{{ else }}300{{ end }};
+    --secondary_font_weight_ebp:{{ if isset .Params "secondary_font_weight_ebp" }}{{ .Params.secondary_font_weight_ebp | safeCSS }}{{ else }}700{{ end }};
+
+    {{if .Params.hero_border_color}}--hero-border-color:{{ index .Params "hero_border_color" }};{{else}}{{end}}
+    {{if .Params.tab_color}}--tab-color:{{ index .Params "tab_color" }};{{else}}{{end}}
+    {{if .Params.tab_underline_color}}--tab-underline-color:{{ index .Params "tab_underline_color" }};{{else}}{{end}}
+    {{if .Params.heading_color}}--heading-color:{{ index .Params "heading_color" }};{{else}}{{end}}
+    {{if .Params.heading_background_color}}--heading-background-color:{{ index .Params "heading_background_color" }};{{else}}{{end}}
+    {{if .Params.social_icon_color}}--social-icon-color:{{ index .Params "social_icon_color" }};{{else}}{{end}}
+}
+{{ end }}
+{{ if isset .Params "fullpage_background" }}
+:root {
+--fullpage-background:{{ .Params.fullpage_background | safeCSS }};
+}
+footer {
+    margin-top: 0;
+}
+.fullpage-background {
+    height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/theme/images/home/header.jpg);
+    background-image: var(--fullpage-background);
+}{{ end }}
+    </style>
+ {{/*
+
+ {{ if eq .Section "jobs" }}
+ {{/*  :root {
+    {{if .Params.theme_primary_ebp}}--theme-primary-ebp:{{ index .Params "theme_primary_ebp" }};{{else}}{{end}}
+    {{if .Params.theme_secondary_ebp}}--theme-secondary-ebp:{{ index .Params "theme_secondary_ebp" }};{{else}}{{end}}
+    
+    {{ if isset .Params "secondary_font_family_ebp" }}--secondary-font-family-ebp:{{ .Params.secondary_font_family_ebp | safeCSS }}, 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;{{ end }}
+    {{ if isset .Params "primary_font_family_ebp" }}--primary-font-family-ebp:{{ .Params.primary_font_family_ebp | safeCSS }}, Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif;{{ end }}
+
+    {{if .Params.hero_border_color}}--hero-border-color:{{ index .Params "hero_border_color" }};{{else}}{{end}}
+    {{if .Params.tab_color}}--tab-color:{{ index .Params "tab_color" }};{{else}}{{end}}
+    {{if .Params.tab_underline_color}}--tab-underline-color:{{ index .Params "tab_underline_color" }};{{else}}{{end}}
+    {{if .Params.heading_color}}--heading-color:{{ index .Params "heading_color" }};{{else}}{{end}}
+    {{if .Params.heading_background_color}}--heading-background-color:{{ index .Params "heading_background_color" }};{{else}}{{end}}
+    {{if .Params.social_icon_color}}--social-icon-color:{{ index .Params "social_icon_color" }};{{else}}{{end}}
+}  */}}
+    {{/* 
+    {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" )}}
+{{ $styles := resources.Get "sass/jobs-template.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS }}
+    {{ $styles.Content | safeCSS }}
+    {{ end }}  */}}
+
+    {{/*  {{ if eq .Section "jobs" }}
+    {{ partial "sections/jobs/style.html" | safeCSS }}  */}}
+        {{/*  // Generate a resource and inline the resulting processed CSS  */}}
+{{/*  {{ $critical := resources.Get "scss/jobs-template.scss" | resources.ExecuteAsTemplate "style.critical.scss" . | toCSS | postCSS | minify }}
+{{ (slice $critical | resources.Concat "style.scss").Content | safeCSS }}  */}}
+
+
+
+    {{/*  // Minify can cause problems when inlining!  */}}
+    {{/*  {{ $sassTemplate := resources.Get "sass/jobs-template.scss" }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | resources.Minify}}  */}}
+    {{/*  {{ $style.Content }}  */}}
+    {{/*  <link rel="stylesheet" href="{{ $style.RelPermalink }}">  */}}
+    {{/*  {{ $styles := resources.Get "sass/jobs-template.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS (dict "enableSourceMap" true) }}  */}}
+
+{{/*  {{ $styles := resources.Get "sass/jobs-template.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS }}
+{{ $styles.Content }}  */}}
+
+{{/*  {{ $styles := resources.Get "/sass/jobs-template.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS }}
+{{ $styles.Content }}  */}}
+
+        {{/*  {{ with resources.Get "main.css" }}
+      <style>{{ .Content | safeCSS }}</style>
+      {{ end }}  */}}
+
+
+    {{/*  {{ with resources.Get "sass/jobs-template.scss" | resources.ExecuteAsTemplate | toCSS | minify }}  */}}
+    {{/*  {{ with $jobsstyle }}
+    <style>{{ .Content | safeCSS }}</style>
+    {{ end }}    */}}
+    {{/*  {{ with $jobsstyle }}
+    {{ .Content | safeCSS }}
+    {{ end }}  */}}
+
+    {{/* {{ end }} */}}
+    {{/*  {{ if eq .Section "jobs" }}
+    {{ $style := resources.Get "/jobs/mey.css" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}"> 
+    {{ end }}  */}}
+
+    {{/*  {{ $style := resources.Get "/jobs/jobs.css" | resources.ToCSS | resources.Minify | resources.Fingerprint }}  */}}
+    {{/*  {{ readFile "assets/main.css" | safeCSS }}
+      */}}
+      {{/*  {{ with resources.Get "main.scss" | minify }}
+      <style>{{ .Content | safeCSS }}</style>
+      {{ end }}  */}}
+
+
+    {{/*  {{ partial "employer-branding-custom-stylesheet" | safeCSS }}  */}}
+
+{{ else }}
+    {{ partial "stylesheet.regular" . }}
+{{ end }}

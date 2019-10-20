@@ -1,0 +1,9 @@
+<div class="after-post-tags">
+    <ul class="tags tags tags--postTags tags--borderless list-reset">
+        {{ range .Params.tags }}
+        <li class="inline-block mr1">
+            <a class="btn rounded" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{.}}</a>
+        </li>
+        {{ end }}
+    </ul>
+</div>

@@ -1,0 +1,37 @@
+{{ partial "structure/head-amp" . }} {{/* Body starts inside head-amp */}}
+<div></div>
+{{ block "hero" . }}
+<header class="hero header-hero">
+    {{/* {{ partial "_shared/hero" . }} */}}
+</header>
+{{ end }}
+{{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
+<main class="main-content" id="main-content">
+    <div class="grid mx-auto">
+        <div class="grid-wrapper">
+            {{ block "breadcrumbs" . }}
+            <div class="grid-breadcrumbs m2">
+                {{ partial "navigation/breadcrumbs" . }}
+            </div>
+            {{ end }}
+            {{ block "title" . }}
+            <div class="grid-head m2">
+                {{- partial "_shared/title" . -}}
+            </div>
+            {{ end }}
+            <div class="grid-nav m2">
+                {{ block "nav" . }}
+                {{ if (not (isset .Params "disablemenu")) }}
+                {{ block "sidebarmenu" . }}{{ end }}
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ block "main" . }}{{ end }}
+        </div>
+        {{ block "article" . }}{{ end }}
+        {{/* For article to support inset, outset & fullwidth images it must have the full width of the page available to it. Might also create the inset outset with CSS grid */}}
+    </div>
+</main>
+{{ block "navigation" . }}{{ partial "_shared/navigation" . }}{{ end }}
+{{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}
+{{ partial "structure/footer-amp" . }}

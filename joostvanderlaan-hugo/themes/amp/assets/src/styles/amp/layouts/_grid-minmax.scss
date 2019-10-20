@@ -1,0 +1,8 @@
+// minmax() in auto-fill repeating tracks
+// https://gridbyexample.com/examples/example28/
+
+.wrapper-minmax {
+    display: grid;
+    grid-gap: 20px; // Make variable for this
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+}

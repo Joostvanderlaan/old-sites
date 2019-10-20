@@ -1,0 +1,55 @@
+/* 
+   VARIABLES
+   - Cool
+   - Warm
+   - Gray Scale
+*/
+
+:root {
+  --black-dark: rgba(0, 0, 0, .87);
+  --black-light: rgba(0, 0, 0, .38);
+  --black-medium: rgba(0, 0, 0, .60);
+  --black: rgb(0, 0, 0);
+  --white-light: rgb(255, 255, 255, .70);
+  --white-medium: rgb(255, 255, 255, .50);
+  --white: rgb(255, 255, 255);
+  --grey-dark: rgb(88, 89, 91);
+  --grey-light: rgb(237, 237, 238);
+  --grey: rgb(109, 110, 113);
+
+  --abbey-blue-dark: rgb(0, 77, 218);
+  --abbey-blue-light: rgb(0, 185, 252);
+  --abbey-blue: rgb(0, 134, 218);
+  --azure-dark:rgb(0, 135, 252);
+  --azure-light: rgb(0, 158, 252);
+  --azure: rgb(0, 158, 252);
+  --blue-dark: rgb(42, 76, 136);
+  --blue-darker: rgb(2, 68, 182);
+  --blue-light: rgb(2, 103, 127);
+  --blue-lighter: rgb(2, 151, 182);
+  --blue: rgb(2, 103, 160);
+  --cian: rgb(0, 255, 255);
+  --green-dark: rgb(2, 182, 182);
+  --green-light: rgb(182, 254, 112);
+  --green: rgb(117, 179, 114);
+  --magenta: rgb(191, 0, 141);
+  --orange-dark: rgb(225, 70, 87);
+  --orange: rgb(247, 115, 53);
+  --pink-dark: rgb(225, 70, 142);
+  --pink-light: rgb(247, 115, 156);
+  --pink-lighter: rgba(255, 122, 132, 0.25);
+  --pink: rgb(225, 70, 87);
+  --purple-light: rgb(206, 158, 209);
+  --purple-lighter: rgb(189, 153, 194);
+  --purple: rgb(88, 11, 108);
+  --red-dark: rgb(169, 0, 46);
+  --red: rgb(211, 39, 87);
+  --royal-blue-dark: rgb(8, 11, 15);
+  --royal-blue: rgb(91, 118, 183);
+  --teal-dark: rgb(42, 103, 136);
+  --teal-light: rgb(22, 151, 153);
+  --teal: rgb(22, 123, 136);    
+
+  --jobs-color: var(--blue-dark);
+    }
+    

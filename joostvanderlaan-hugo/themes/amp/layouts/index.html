@@ -1,0 +1,23 @@
+{{ define "breadcrumbs"}}
+<div></div>{{/* We need to put something inside to override / disable a template block from showing */}}{{ end }}
+{{ define "nav" }}
+{{- partial "_shared/menu-jobs.html" . -}}
+{{ end }}
+{{ define "main"}}
+<div class="grid-content">
+    <section class="grid-content recent-posts">
+        {{ .Content }}
+        <div class="section-title">
+        </div>
+        <div class="row listrecent">
+            <div class="grid-container-cards">
+                {{ $paginator := .Paginate (where .Pages "Section" "pages") 10 }}
+                {{ range where $paginator.Pages "Params.hidden" "ne" "true" }}
+                {{- partial "list/card" . -}}
+                {{end}}
+            </div>
+        </div>
+        {{ template "_internal/pagination.html" . }}
+    </section>
+</div>
+{{ end }}

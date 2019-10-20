@@ -1,0 +1,36 @@
+{{ if ne .Params.amp.enable false }}
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html {{ if isset $.Site.Params "amp" }}amp{{ end }} lang="en" class="no-js oldie"><![endif]-->
+<!--[if IE 8 ]><html {{ if isset $.Site.Params "amp" }}amp{{ end }} lang="en" class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html {{ if isset $.Site.Params "amp" }}amp{{ end }} lang="en" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html {{ if isset $.Site.Params "amp" }}⚡{{ end }} lang="{{ with $.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}" class="no-js"><!--<![endif]-->
+<head>
+    <meta charset="utf-8"> {{/* Must be first for AMP  */}}
+    {{ if isset $.Site.Params "amp" }} 
+{{- $ampCorePath := index (index $.Site.Data "amp-modules") "amp-core" -}}
+    <link rel="preload" as="script" href="{{ $ampCorePath }}">{{ end }}
+    <title>{{ .Title }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="{{.Description}}" />
+    {{ partial "structure/scripts-amp" . }}
+    <link rel="canonical" href="{{ .RelPermalink }}">
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="144x144">
+    {{ if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+    <meta name="theme-color" content="{{ $.Site.Params.themeColor }}" />    {{/*  Android address bar color  */}}
+    {{ partial "seo/main" . }}
+    {{ if .Params.googleFontLink }}<link rel="stylesheet" href="{{ .Params.googleFontLink }}">{{ end }}
+</head>
+
+<body>
+{{ if isset $.Site.Params "ampmanifest" }}
+{{ with $.Site.Data.app.banner }}{{ partial "amp/app-banner" . }}{{ end }}
+{{ end }}
+
+{{ else }}
+{{ partial "structure/head.no-amp" . }}
+{{ end }}
+
+{{/*  {{ partial "googleTagManagerNoScript" . }}  */}}

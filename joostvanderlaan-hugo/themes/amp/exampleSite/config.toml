@@ -1,0 +1,47 @@
+baseurl = "https://gohugo-amp.gohugohq.com/"
+languageCode = "en-us"
+title = "gohugo-amp starter theme"
+theme = "gohugo-amp"
+enableRobotsTXT = true
+
+[params]
+  images = ["/cdn/theme/images/fu-default_1200x630_black-favicon.jpg"]
+  amp = true # enables amp features
+  ampCdnRoot = "https://cdn.ampproject.org/" # defined base cdn root of the amp projects files
+  ampRelease = "v0" # define amp release you want to use
+  ampElementsVersion = "0.1" # define amp-elements version you want to use
+ # define which amp-elements you are using globally, these elements will be included in every page
+  # SET others PER PAGE, not here.
+  ampElements = ["amp-sidebar","amp-analytics"]
+  themeColor = "#FFFFFF" # define a theme color (this will colorize the android address-bar)
+  adsensePublisher = "pub-7763170145936962" # ca-pub-123456789 required if you want to include google adsense
+  # googleAnalytics = "UA-123456-78" # required if you want to use google analytics
+  # appleItunesApp = "app-id=123456789, app-argument=app-name://link/to/app-content" # required if you want to add an app banner with iOS app
+  # ampManifest = "/amp-manifest.json" # required if you want to add the app-banner feature
+  alternatePageName = "Acme AMP" # alternative name for website structured data
+  organizationLogo = "https://Acme.com/global-assets/fu20164/dist/images/schema-org/logo-600x51.png" # set organization logo for structured data
+  organizationName = "Acme.com" # set organization name
+  organizationAddress = "Hoogoorddreef 56S, 1101BE Amsterdam" # set organization address
+  # socialProfiles = ["https://www.facebook.com/Acme/","http://instagram.com/yourProfile","http://www.linkedin.com/in/yourprofile","http://plus.google.com/your_profile"]  # https://twitter.com/Acme for sameAs in organization's structured data
+  publisherName = "Acme" # publisher used in article schema
+  publisherLogo = "https://Acme.com/global-assets/fu20164/dist/images/schema-org/logo-600x51.png" # https://developers.google.com/search/docs/data-types/articles#logo-guidelines
+  publisherLogoWidth = 600 # logo width
+  publisherLogoHeight = 51 # logo height
+    amp = true
+    ampElements = ["amp-accordion","amp-ad","amp-analytics","amp-app-banner","amp-carousel","amp-iframe","amp-dynamic-css-classes","amp-form","amp-fx-flying-carpet","amp-image-lightbox","amp-lightbox","amp-sidebar","amp-social-share","amp-sticky-ad","amp-user-notification"]
+    themeColor = "#ff1d55"
+    adsensePublisher = "ca-pub-123456789"
+    googleAnalytics = "UA-12345678-123"
+    appleItunesApp = "app-id=123456789, app-argument=app-name://link/to/app-content"
+    ampManifest = "/amp-manifest.json"
+    alternatePageName = "HUGO AMP"
+    organizationLogo = "https://gohugo-amp.gohugohq.com/logo.png"
+    organizationName = "gohugohq.com"
+    organizationAddress = "Some Street 123, 12345 City"
+    socialProfiles = ["http://www.facebook.com/your-profile","http://instagram.com/yourProfile","http://www.linkedin.com/in/yourprofile","http://plus.google.com/your_profile"]
+    publisherName = "gohugohq.com"
+    publisherLogo = "https://gohugo-amp.gohugohq.com/logo-publisher.png" # https://developers.google.com/search/docs/data-types/articles#logo-guidelines
+    publisherLogoWidth = 600
+    publisherLogoHeight = 60
+    stylesheetRegular = ["/base-styling.css"] # these styles are used when amp is disabled for a specific page
+    javascriptRegular = ["/script.js"] # these scripts are used when amp is disabled for a specific page

@@ -1,0 +1,18 @@
+{{ define "sidebarmenu"}}
+{{- partial "_shared/menu-company.html" . -}}
+{{ end }}
+{{ define "main" }}
+    <section class="grid-content recent-posts">
+{{ .Content }}
+        <div class="section-title">                                
+        </div>            
+        <div class="row listrecent">
+                {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 6 }}
+            <div class="grid-container-cards">
+            {{ range $post_paginator.Pages }}
+                {{- partial "list/card" . -}}
+            {{end}}
+        </div>
+        </div>
+    </section>
+{{ end }}

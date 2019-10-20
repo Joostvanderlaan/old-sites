@@ -1,0 +1,21 @@
+/* Basscss Colors */
+
+@import '_variables.css';
+
+.highlight-color { color: var(--pink); }
+.retail-color { color: var(--orange); }
+.fashion-color { color: var(--pink-light); }
+.business-color { color: var(--green); }
+.culture-color { color: var(--green-light); }
+.jobs-color { color: var(--jobs-color); }
+.job-of-the-week-color { color: var(--teal-dark); }
+.top-jobs-color { color: var(--teal); }
+.latest-jobs-color { color: var(--teal-light); }
+.people-color { color: var(--purple-light); }
+.fairs-color { color: var(--purple-lighter); }
+.related-news-color { color: var(--abbey-blue-light); }
+.more-news-color { color: var(--azure); }
+.most-read-color { color: var(--azure-dark); }
+
+.color-inherit { color: inherit }
+.muted { opacity: .5 }

@@ -1,0 +1,158 @@
+// These only work in regular scss files, not for setting the CSS variables
+// needed for setting fallbacks
+$theme-primary: #ff0266;
+$font-system: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+:root {
+    //------------------------------------
+    // EBP start
+
+    // Employer branding page variables, customizable from frontmatter
+    // If you set these here, they will override the ones in the style tag in HTML of EBP
+    // If you don't set them, postcss will complain of not having fallbacks...
+    // need to check if we still need these
+
+    // --primary-font-family-ebp: var(--font-primary);
+    // --secondary-font-family-ebp: var(--font-secondary);
+    // --theme-primary-ebp: var(--theme-primary);
+    // --theme-secondary-ebp: var(--theme-secondary);
+    // --hero-border-color: var(--theme-primary);
+    // --tab-color: var(--theme-primary);
+    // --tab-underline-color: var(--theme-primary);
+    // --heading-color: var(--theme-primary);
+    // --heading-background-color: var(--theme-primary);
+    // --social-icon-color: var(--theme-primary);
+
+    // EBP END
+    //---------------------------------------
+
+    //------------------------------------
+    // Start Custom vars, not in Basscss Joost
+
+    --theme-primary: #ff0266; // only for menus etc.
+    // end custom
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    // --font-primary: Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif;
+    // --font-secondary: 'Open Sans Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    --font-primary: Rubik, 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    --font-secondary: Rubik, 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    --font-navigation: var(--font-secondary);
+    --font-family: var(--font-primary);
+
+    // --black-dark: rgba(0, 0, 0, .87);
+    --black-dark: #1e1e1e; // rgba(88, 89, 91, 1); // High emphasis
+    --black-medium: #666666; // rgba(0, 0, 0, .60);
+    --black-light: rgba(0, 0, 0, .30); // light
+
+    --black: rgb(0, 0, 0);
+    --white: #fff;
+
+    // from FU colors
+    --abbey-blue-light: rgb(0, 185, 252);
+    --grey-light: rgb(237, 237, 238);
+
+    // Extra font-size
+    --body2: 1rem;
+    /* 16px */
+
+    --snackbar-surface: #1e1e2e;
+    // END Custom vars
+    //------------------------------------
+
+    --color-white: #fff;
+    --color-dark-grey: #4a4a4a;
+    --color-grey: #6e6e6e;
+    --color-black: #000;
+
+    --color-body-background: #fff;
+
+    --color-font-default: var(--black-dark);
+    --color-font-accent: var(--black-medium);
+
+    --color-primary: var(--color-white);
+    --color-font-primary: var(--black-dark);
+
+    --color-secondary: var(--color-black);
+    --color-font-secondary: var(--color-white);
+
+    --color-font-subtitle: #4f4f4f;
+
+    --color-disabled: #9b9b9b;
+    --color-border: var(--color-primary);
+
+    --color-navbar-primary: var(--color-primary);
+    --color-navbar-font-primary: var(--color-font-primary);
+
+    --color-input-primary: var(--color-font-accent);
+    --color-input-font-secondary: var(--color-font-accent);
+
+    --color-sidebar-background: #FFF;
+    --color-footer-background: var(--color-primary);
+    --color-font-footer: #3e6458;
+
+    --color-form-invalid: #ff0000;
+
+    --color-input-default: var(--color-font-footer);
+    --color-input-primary: var(--color-font-footer);
+    --color-input-font-primary: var(--color-font-footer);
+    --color-input-secondary: var(--color-font-secondary);
+    --color-input-font-secondary: var(--color-font-secondary);
+
+
+    --zindex-max: 999;
+
+    --body-min-width: 315px;
+    --content-max-width: 700px;
+
+    --h1: 2.5625rem;
+    /* 41px */
+    --h2: 1.625rem;
+    /* 36px */
+    --h3: 1.3125rem;
+    /* 29px */
+    --h4: 1.125rem;
+    /* 25px */
+    --h5: 1rem;
+    /* 22px */
+    --h6: 1.375rem;
+    /* 22px */
+    --h8: .750rem;
+    /* 12px */
+
+    --line-height-1: 1.11111;
+    --line-height-2: 1.42857;
+    --line-height-3: 1.6;
+    --line-height-4: 2.0625;
+
+    --space-4: 2.5rem;
+
+    --navbar-height: 3.5rem;
+
+    // Baseline rhythm (as seen on Medium.com)
+    // https://pilot.co/blog/implementing-baseline-rhythm-in-css/
+    //for hr tag   
+    --x-height-multiplier: 0.342;
+    --baseline-multiplier: 0.22;
+    // for p tag
+    --x-height-multiplier: 0.375;
+    --baseline-multiplier: 0.17;
+    // imagecaption
+    --x-height-multiplier: 0.342;
+    --baseline-multiplier: 0.22;
+}
+
+body {
+    font-family: var(--font-primary);
+}
+
+.black {
+    color: var(--white)
+}
+
+.white {
+    color: var(--white)
+}
+
+.border-width2 {
+    border-width: 2px;
+}
