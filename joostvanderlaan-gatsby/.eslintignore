@@ -1,0 +1,6 @@
+node_modules
+public
+static
+.cache
+gatsby-config.js
+gatsby-node.js
