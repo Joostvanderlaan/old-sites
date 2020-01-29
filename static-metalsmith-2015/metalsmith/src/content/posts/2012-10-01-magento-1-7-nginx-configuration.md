@@ -1,9 +1,10 @@
 ---
 lunr: true
-title: "magento-1-7-nginx-configuration"
+title: 'magento-1-7-nginx-configuration'
 date: 2012-10-01
 template: post.hbs
 ---
+
 This config works for Magento version 1.7:
 
 ```language-nginx
@@ -84,3 +85,4 @@ server {
 
 
 via Magento.
+```

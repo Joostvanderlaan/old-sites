@@ -1,17 +1,21 @@
 ---
-title: "Perfect looking webfonts for Chrome on Windows"
-slug: "perfect-looking-webfonts-for-chrome-on-windows"
-cover: "./blue.png"
+title: 'Perfect looking webfonts for Chrome on Windows'
+slug: 'perfect-looking-webfonts-for-chrome-on-windows'
+cover: './blue.png'
 author: Joost van der Laan
 date: 2014-04-30
 layout: post
-path: "/perfect-looking-webfonts-for-chrome-on-windows"
+path: '/perfect-looking-webfonts-for-chrome-on-windows'
 tags: [FrontEnd, example, webfonts, keywords]
-category: "FrontEnd"
-description: "Font-face webfonts look terrible in Chrome on Windows by default. Luckily there is a solution for this common problem."
+category: 'FrontEnd'
+description:
+  'Font-face webfonts look terrible in Chrome on Windows by default. Luckily there is a solution for
+  this common problem.'
 ---
 
-Font-face webfonts look terrible in Chrome on Windows by default. Luckily there is a solution for this common problem. It does involve some work, but it's absolutely worth the trouble. (If you're like me and can't stand the pixelated, grainy looking fonts)
+Font-face webfonts look terrible in Chrome on Windows by default. Luckily there is a solution for
+this common problem. It does involve some work, but it's absolutely worth the trouble. (If you're
+like me and can't stand the pixelated, grainy looking fonts)
 
 <!-- <figure class="floatRight">
 	<img style="height: 310px;" src="./Gutenberg.jpg" alt="Gutenberg">
@@ -22,7 +26,8 @@ Font-face webfonts look terrible in Chrome on Windows by default. Luckily there 
 
 2.  Convert the .TTF font on FontSquirrel so you'll get the .EOT .WOFF .SVG formats.
 
-3.  Create CSS in your `/css` folder. In this case I'm referencing the fonts which are located in the `/fonts` folder.
+3.  Create CSS in your `/css` folder. In this case I'm referencing the fonts which are located in
+    the `/fonts` folder.
 
 ```language-css
  @font-face {

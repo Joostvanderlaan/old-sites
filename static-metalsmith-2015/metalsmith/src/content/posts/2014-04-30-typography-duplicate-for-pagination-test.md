@@ -1,10 +1,12 @@
 ---
 lunr: true
-title: "Typography 2"
+title: 'Typography 2'
 date: 2014-04-30
 template: post.hbs
 ---
+
 2 Typography 2
+
 <h2 id="creatingbeautifulcontentwithghostion">Creating Beautiful Content with Ghostion</h2>
 
 <p>Powered by Foundation 5, typography in Ghostion theme is meant to make your life easier by providing clean, attractive, simple default styles for all of the most basic typographical elements.</p>

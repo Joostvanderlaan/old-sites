@@ -7,11 +7,11 @@ joostvanderlaan-haproxy:
     - production
   restart: on-failure
   ports:
-    - "80:80"
+    - '80:80'
   roles:
     - global
   links:
-    - "joostvanderlaan.nl:joostvanderlaan.nl"
+    - 'joostvanderlaan.nl:joostvanderlaan.nl'
   environment:
     BALANCE: source
 joostvanderlaan-web:

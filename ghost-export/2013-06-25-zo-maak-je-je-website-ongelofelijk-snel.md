@@ -1,7 +1,7 @@
 Supersnelle website regels
 
-Door Joost van der Laan op zo, 10/07/2012 - 01:06
-Regel 1 - Maak minder HTTP requests - Make Fewer HTTP Requests
+Door Joost van der Laan op zo, 10/07/2012 - 01:06 Regel 1 - Maak minder HTTP requests - Make Fewer
+HTTP Requests
 
 Regel 2 - Gebruik een Content Delivery Network (CDN) - Use a Content Delivery Network Regel
 

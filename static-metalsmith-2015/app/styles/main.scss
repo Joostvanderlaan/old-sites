@@ -29,27 +29,25 @@
 // DO NOT INCLUDE FONTS HERE! - They should go into separate fonts-base64 file for base64 loading and caching.
 
 // Google Fonts
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300, 400, 500, 700);
 
 // Material Design Lite | www.getmdl.io
 // @import'../bower_components/material-design-lite/material.min.css'; // Breaks critical
-@import'vendor/_material.min.scss';
+@import 'vendor/_material.min.scss';
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
-@import'includes/_typography.scss';
+@import 'includes/_typography.scss';
 
-@import'_google_blog_example.scss';
-
-
+@import '_google_blog_example.scss';
 
 // drawer separator
 .material-drawer span.mdl-navigation__link.mdl-navigation__link {
-    color: #3f51b5;
+  color: #3f51b5;
 }
 .material-drawer-separator {
-    height: 1px;
-    background-color: #dcdcdc;
-    margin: 8px 0;
+  height: 1px;
+  background-color: #dcdcdc;
+  margin: 8px 0;
 }
 
 .main__title {

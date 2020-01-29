@@ -8,7 +8,7 @@ server {
 
 	location / {
 			index 					index.html index.php; 	## Allow a static html file to be shown first
-        	try_files 				$uri $uri/ @handler; 	## If missing pass the URI to Magento's front handler    		
+        	try_files 				$uri $uri/ @handler; 	## If missing pass the URI to Magento's front handler
 	}
 
 	location /admin/ {
@@ -37,7 +37,7 @@ server {
     }
 
         #### only use this if you use MAGMI
-	location /magmi/ { 
+	location /magmi/ {
         auth_basic           "Restricted"; ## Message shown in login window
         auth_basic_user_file htpasswd; ## See /etc/nginx/htpassword
         autoindex            on;
@@ -62,19 +62,20 @@ server {
         fastcgi_index  index.php;
         #fastcgi_param  HTTPS $fastcgi_https;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-        fastcgi_param  MAGE_RUN_CODE default; ## Store code is defined in administration > Configuration > Manage Stores		
+        fastcgi_param  MAGE_RUN_CODE default; ## Store code is defined in administration > Configuration > Manage Stores
 		fastcgi_param  MAGE_RUN_TYPE store;
         include        fastcgi_params; ## See /etc/nginx/fastcgi_param
         fastcgi_param HTTPS on;  #otherwize Magento doesn't know it's https and you'll create a redirect loop
 }
 
 }
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 via Magento.
+```

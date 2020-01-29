@@ -13,18 +13,10 @@
     "framework",
     "web"
   ],
-  "authors": [
-    "Joost van der Laan <joost@joostvanderlaan.nl>"
-  ],
+  "authors": ["Joost van der Laan <joost@joostvanderlaan.nl>"],
   "homepage": "joostvanderlaan.nl",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "dependencies": {
     "material-design-lite": "~1.0.2"
   },

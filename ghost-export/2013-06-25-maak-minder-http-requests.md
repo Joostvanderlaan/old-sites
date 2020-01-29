@@ -10,9 +10,11 @@ Bijvoorbeeld Bol.com gebruikt dit op zijn site voor verschillende iconen. Alhoew
 
 <a href="http://joostvanderlaan.nl/wp-content/uploads/2013/07/bol-com-sprite.png"><img src="http://joostvanderlaan.nl/wp-content/uploads/2013/07/bol-com-sprite.png" alt="bol-com-sprite" width="60" height="112" class="alignnone size-full wp-image-115" /></a><a href="http://joostvanderlaan.nl/wp-content/uploads/2013/07/bol-com-sprite2.png"><img src="http://joostvanderlaan.nl/wp-content/uploads/2013/07/bol-com-sprite2.png" alt="bol-com-sprite2" width="62" height="150" class="alignnone size-full wp-image-116" /></a>
 
-Wat dat betreft doet google het beter, zij hebben nagenoeg álle afbeeldingen die horen bij de besturing van de zoekpagina in één CSS sprite staan.
+Wat dat betreft doet google het beter, zij hebben nagenoeg álle afbeeldingen die horen bij de
+besturing van de zoekpagina in één CSS sprite staan.
 
 <a href="http://joostvanderlaan.nl/wp-content/uploads/2013/07/google-com-sprite.png"><img src="http://joostvanderlaan.nl/wp-content/uploads/2013/07/google-com-sprite.png" alt="google-com-sprite" width="167" height="389" class="alignnone size-full wp-image-117" /></a>
+
 <h2>Let’s get it fast</h2>
 <h3>Combineren van CSS &amp; Javascript</h3>
 Starten doe ik met algemene tips, daarna geef ik voor Wordpress, Drupal en Magento specifieke tips. Voor Apache webserver gebruikers: installeer <a href="https://developers.google.com/speed/pagespeed/mod">mod_pagespeed</a> van Google. Simpel en doeltreffend. Naast het combineren van Javascript en CSS doet deze plugin voor nog veel meer, lees daarover op de <a href="https://developers.google.com/speed/pagespeed/mod">plugin website.</a>
@@ -23,7 +25,9 @@ Wat doet het: CSS en JS combineren (en minify, oftewel verkleinen) <a href="http
 <h3>Tips voor Drupal</h3>
 <strong>Combineren van CSS &amp; JavaScript</strong>
 
-Drupal heeft deze functionaliteit ingebouwd. Je hoeft het alleen maar aan te zetten in: Configuration &gt; Development &gt; Performance en zet vervolgens de vinkjes aan bij:
+Drupal heeft deze functionaliteit ingebouwd. Je hoeft het alleen maar aan te zetten in:
+Configuration &gt; Development &gt; Performance en zet vervolgens de vinkjes aan bij:
+
 <ul>
 	<li>Aggregate and compress CSS files.</li>
 	<li>Aggregate JavaScript files.</li>

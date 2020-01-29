@@ -1,10 +1,11 @@
 ---
 lunr: true
-title: "Styleguide"
+title: 'Styleguide'
 date: 2014-04-30
 layout: page
-path: "/styleguide"
+path: '/styleguide'
 ---
+
 ## Styleguide
 
 to be continued...

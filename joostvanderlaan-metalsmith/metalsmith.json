@@ -6,8 +6,8 @@
     "metalsmith-markdown": true,
     "metalsmith-permalinks": "posts/:title",
     "metalsmith-templates": "handlebars",
-     "contentful-metalsmith" : {
-    "accessToken" : "q34bu41zac9r"
-},
+    "contentful-metalsmith": {
+      "accessToken": "q34bu41zac9r"
+    }
   }
 }

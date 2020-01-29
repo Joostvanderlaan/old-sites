@@ -6,116 +6,122 @@
 
 # Gatsby Starter Landing Pages
 
-When having PNGQuant errors, install libpng ubuntu 18
-wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
+When having PNGQuant errors, install libpng ubuntu 18 wget -q -O /tmp/libpng12.deb
+http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
 
-A blog starter for Landing Pages with advanced features for [Gatsby](https://github.com/gatsbyjs/gatsby/).
+A blog starter for Landing Pages with advanced features for
+[Gatsby](https://github.com/gatsbyjs/gatsby/).
 
-* [Demo website on GitHub Pages.](https://joostvanderlaan.github.io/gatsby-starter-landing-pages/)
+- [Demo website on GitHub Pages.](https://joostvanderlaan.github.io/gatsby-starter-landing-pages/)
 
 For performance comparisons the demo is also hosted on:
 
-* [Firebase Hosting](https://landing-pages-e6d94.firebaseapp.com/)
-* [Netlify](https://gatsby-landing-pages.netlify.com/)
+- [Firebase Hosting](https://landing-pages-e6d94.firebaseapp.com/)
+- [Netlify](https://gatsby-landing-pages.netlify.com/)
 
 Compare latency with Apex.sh, this is far from a scientific method though.
 
-* [GitHub Pages vs Firebase](https://latency.apex.sh/?url=https://joostvanderlaan.github.io/gatsby-starter-landing-pages/&compare=https://landing-pages-e6d94.firebaseapp.com/)
-* [GitHub Pages vs Netlify](https://latency.apex.sh/?url=https%3A%2F%2Fjoostvanderlaan.github.io/gatsby-starter-landing-pages/&compare=https%3A%2F%2Fgatsby-landing-pages.netlify.com/)
-* [Firebase vs Netlify](https://latency.apex.sh/?url=https://landing-pages-e6d94.firebaseapp.com/&compare=https://gatsby-landing-pages.netlify.com/)
+- [GitHub Pages vs Firebase](https://latency.apex.sh/?url=https://joostvanderlaan.github.io/gatsby-starter-landing-pages/&compare=https://landing-pages-e6d94.firebaseapp.com/)
+- [GitHub Pages vs Netlify](https://latency.apex.sh/?url=https%3A%2F%2Fjoostvanderlaan.github.io/gatsby-starter-landing-pages/&compare=https%3A%2F%2Fgatsby-landing-pages.netlify.com/)
+- [Firebase vs Netlify](https://latency.apex.sh/?url=https://landing-pages-e6d94.firebaseapp.com/&compare=https://gatsby-landing-pages.netlify.com/)
 
-Inspired by both [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter) & [Gatsby Starter Gatsbythemes](https://github.com/saschajullmann/gatsby-starter-gatsbythemes).
+Inspired by both [Gatsby Advanced Starter](https://github.com/Vagr9K/gatsby-advanced-starter) &
+[Gatsby Starter Gatsbythemes](https://github.com/saschajullmann/gatsby-starter-gatsbythemes).
 
 ## Deploy to Firebase Hosting
 
     firebase init
     firebase login:ci
 
-Store the token you get as variable FIREBASE_DEPLOY_KEY in GitLab. This is used in .gitlab-ci.yml to deploy to Firebase Hosting.
+Store the token you get as variable FIREBASE_DEPLOY_KEY in GitLab. This is used in .gitlab-ci.yml to
+deploy to Firebase Hosting.
 
 ## Why?
 
 This project aims to provide starter for building landing pages, sites & blogs powered by Gatsby JS.
 
-It uses React Material Components Web and it provides basic components for SEO/Social Media/UI. Since we believe in the power of CSS-in-JS, Emotion is included for styling.
-That project uses React Material Components Web to implement Material Design as close to what Google intended as possible.
+It uses React Material Components Web and it provides basic components for SEO/Social Media/UI.
+Since we believe in the power of CSS-in-JS, Emotion is included for styling. That project uses React
+Material Components Web to implement Material Design as close to what Google intended as possible.
 
 ## How can I use this?
 
-If you are interested in building websites that are highly optimized, for SEO and performance, you can use this an unstyled, "minimal" starter.
+If you are interested in building websites that are highly optimized, for SEO and performance, you
+can use this an unstyled, "minimal" starter.
 
 ## Features
 
-* React Material Components Web
-* Mobile, responsive design with CSS Grid
-* Images with Blur-Up technique
-* CSS-in-JS via [Emotion](https://github.com/emotion-js/emotion).
+- React Material Components Web
+- Mobile, responsive design with CSS Grid
+- Images with Blur-Up technique
+- CSS-in-JS via [Emotion](https://github.com/emotion-js/emotion).
   <!-- * Jest and Enzyme for testing.
-* Eslint in dev mode with the airbnb config and prettier formatting rules.
-* React 16. -->
+- Eslint in dev mode with the airbnb config and prettier formatting rules.
+- React 16. -->
   <!-- * A basic blog, with posts under src/pages/blog. There's also a script which creates a new Blog entry (post.sh). -->
-* Data loading from JSON files.
-* Flexible tagging with Google Tag Manager
-* Offline support with Service Workers
-* [Prettier](https://github.com/prettier/prettier) for a uniform codebase.
-* [Normalize](https://github.com/necolas/normalize.css/) css (7.0)
+- Data loading from JSON files.
+- Flexible tagging with Google Tag Manager
+- Offline support with Service Workers
+- [Prettier](https://github.com/prettier/prettier) for a uniform codebase.
+- [Normalize](https://github.com/necolas/normalize.css/) css (7.0)
 
-- Blazing fast load time
-- SSR (Server Side Rendering)
-- Automatic code splitting of JS files
-- Separate components for everything
-- High configurability:
-  * User information
-  * User social profiles
-  * Copyright information
-  * More!
-- Author segment
-  * Name
-  * Location
-  * Description
-  * Links
-  * Follow Me button
-- Posts in Markdown
-  * Code syntax highlighting
-  * Embed YouTube videos
-  * Embed Tweets
-- Tags
-  * Separate page for posts under each tag
-- Categories
-  * Separate page for posts under each category
-- Disqus support
-  * Notifications about new disqus comments
-- Google Analytics support
-- NPM scripts for GitHub Pages deployment
-- Social features
-  * Twitter tweet button
-  * Facebook share/share count
-  * Reddit share/share count
-  * Google+ share button
-  * LinkedIn share button
-  * Telegram share button
-- SEO
-  * Sitemap generation
-  * robots.txt
-  * General description tags
-  * Schema.org JSONLD (Google Rich Snippets)
-  * OpenGraph Tags (Facebook/Google+/Pinterest)
-  * Twitter Tags (Twitter Cards)
-- RSS feeds
-- Loading progress for slow networks
-- Offline support
-- Web App Manifest support
-- Development tools
-  * ESLint for linting
-  * Prettier for code style
-  * Remark-Lint for linting Markdown
-  * write-good for linting English prose
-  * gh-pages for deploying to GitHub pages
-  * CodeClimate configuration file and badge
+* Blazing fast load time
+* SSR (Server Side Rendering)
+* Automatic code splitting of JS files
+* Separate components for everything
+* High configurability:
+  - User information
+  - User social profiles
+  - Copyright information
+  - More!
+* Author segment
+  - Name
+  - Location
+  - Description
+  - Links
+  - Follow Me button
+* Posts in Markdown
+  - Code syntax highlighting
+  - Embed YouTube videos
+  - Embed Tweets
+* Tags
+  - Separate page for posts under each tag
+* Categories
+  - Separate page for posts under each category
+* Disqus support
+  - Notifications about new disqus comments
+* Google Analytics support
+* NPM scripts for GitHub Pages deployment
+* Social features
+  - Twitter tweet button
+  - Facebook share/share count
+  - Reddit share/share count
+  - Google+ share button
+  - LinkedIn share button
+  - Telegram share button
+* SEO
+  - Sitemap generation
+  - robots.txt
+  - General description tags
+  - Schema.org JSONLD (Google Rich Snippets)
+  - OpenGraph Tags (Facebook/Google+/Pinterest)
+  - Twitter Tags (Twitter Cards)
+* RSS feeds
+* Loading progress for slow networks
+* Offline support
+* Web App Manifest support
+* Development tools
+  - ESLint for linting
+  - Prettier for code style
+  - Remark-Lint for linting Markdown
+  - write-good for linting English prose
+  - gh-pages for deploying to GitHub pages
+  - CodeClimate configuration file and badge
 
 ## Getting Started
 
-Install this starter (assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is installed) by running from your CLI:
+Install this starter (assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is installed) by
+running from your CLI:
 
 ```sh
 gatsby new YourProjectName https://github.com/joostvanderlaan/gatsby-starter-landing-pages
@@ -155,8 +161,7 @@ module.exports = {
   siteRss: '/rss.xml', // Path to the RSS file.
   siteFBAppID: 'XXXXXXXXXXXXXXXX', // FB Application ID for using app insights
   googleTagManagerID: 'GTM-XXXXXXX',
-  disqusShortname:
-    'https-joostvanderlaan-github-io-gatsby-starter-landing-pages', // Disqus shortname.
+  disqusShortname: 'https-joostvanderlaan-github-io-gatsby-starter-landing-pages', // Disqus shortname.
   postDefaultCategoryID: 'Fashion', // Default category for posts.
   userName: 'Fashionista', // Username to display in the author segment.
   userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.

@@ -1,13 +1,13 @@
 language: node_js
 node_js:
-  - "0.10"
+  - '0.10'
 sudo: false
 cache:
   directories:
     - node_modules
     - bower_components
 addons:
-  postgresql: "9.3"
+  postgresql: '9.3'
 env:
   - DB=sqlite3 NODE_ENV=testing
   - DB=mysql NODE_ENV=testing-mysql
@@ -22,7 +22,8 @@ before_install:
   - export PATH=$PATH:`pwd`/bin
   - cd -
   - if [ $DB == "mysql" ]; then mysql -e 'create database ghost_testing'; fi
-  - if [ $DB == "pg" ]; then npm install pg; psql -c 'create database ghost_testing;' -U postgres; fi
+  - if [ $DB == "pg" ]; then npm install pg; psql -c 'create database ghost_testing;' -U postgres;
+    fi
 before_script:
   - phantomjs --version
   - casperjs --version

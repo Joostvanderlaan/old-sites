@@ -1,6 +1,5 @@
 Typography
 
-
                         <h2 id="creatingbeautifulcontentwithghostion">Creating Beautiful Content with Ghostion</h2>
 
 <p>Powered by Foundation 5, typography in Ghostion theme is meant to make your life easier by providing clean, attractive, simple default styles for all of the most basic typographical elements.</p>

@@ -1,20 +1,20 @@
 ---
-title: "Magento 1.7 NGINX configuration"
-slug: "magento-1-7-nginx-configuration"
-cover: "./blue.png"
+title: 'Magento 1.7 NGINX configuration'
+slug: 'magento-1-7-nginx-configuration'
+cover: './blue.png'
 author: Joost van der Laan
-date: "2012-10-01T22:40:32.169Z"
+date: '2012-10-01T22:40:32.169Z'
 layout: post
 draft: false
-path: "/magento-1-7-nginx-configuration"
+path: '/magento-1-7-nginx-configuration'
 tags:
-  - "Backend"
-  - "Magento"
-  - "NGINX"
-  - "Performance"
-  - "example"
-category: "BackEnd"
-description: "A NGINX config to use with Magento version 1.7"
+  - 'Backend'
+  - 'Magento'
+  - 'NGINX'
+  - 'Performance'
+  - 'example'
+category: 'BackEnd'
+description: 'A NGINX config to use with Magento version 1.7'
 ---
 
 This config works for Magento version 1.7:

@@ -2,15 +2,20 @@ Magento – use Redis as cache backend
 
 We will configure Magento to use Redis as main cache backend.
 
-1. Install Redis. (2.4 is required because it supports operating on multiple keys for many operations)
+1. Install Redis. (2.4 is required because it supports operating on multiple keys for many
+   operations)
 
-2. Install <a href="https://github.com/nicolasff/phpredis" target="_blank">phpredis</a>. <a href="https://github.com/nicolasff/phpredis" target="_blank">Phpredis</a> is optional, but it is much faster than <a href="https://github.com/jdp/redisent" target="_blank">Redisent</a>.
+2. Install <a href="https://github.com/nicolasff/phpredis" target="_blank">phpredis</a>.
+   <a href="https://github.com/nicolasff/phpredis" target="_blank">Phpredis</a> is optional, but it
+   is much faster than <a href="https://github.com/jdp/redisent" target="_blank">Redisent</a>.
 
-3. Install this module <a title="git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git" href="git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git" target="_blank">git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git</a>
+3. Install this module
+   <a title="git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git" href="git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git" target="_blank">git://github.com/colinmollenhour/Zend_Cache_Backend_Redis.git</a>
 
 4. Edit <strong>app/etc/local.xml</strong> to configure
 
 Based on this article we have turned off cache disk :
+
 <pre class="lang:default decode:true">&amp;lt;cache&amp;gt;
 
 &amp;lt;backend&amp;gt;Zend_Cache_Backend_Redis&amp;lt;/backend&amp;gt;
@@ -36,7 +41,9 @@ Based on this article we have turned off cache disk :
 &amp;lt;/backend_options&amp;gt;
 
 &amp;lt;/cache&amp;gt;</pre>
+
 To check if everything works fine you can use redis-cli :
+
 <pre class="lang:default decode:true">root@vm:~$ redis-cli
 
 redis 120.0.01:6379&amp;gt; select database
@@ -54,10 +61,12 @@ redis 127.0.0.1:6379&amp;gt; keys *
 4) "zc:d:97a_REC_0000000512"
 
 .......</pre>
+
 As you can see, there are a lot of cache indexes in Redis database.
 
 Source code : link
 
 Benchmark class : benchmark.php
 
-via <a href="http://blog.flexishore.com/2011/09/magento-use-redis-as-cache-backend/">Magento – use Redis as cache backend | Flexishore's Blog</a>.
+via <a href="http://blog.flexishore.com/2011/09/magento-use-redis-as-cache-backend/">Magento – use
+Redis as cache backend | Flexishore's Blog</a>.

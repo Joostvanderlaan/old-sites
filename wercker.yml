@@ -2,8 +2,8 @@ box: nodesource/node
 build:
   steps:
     - npm-install@1.0.5:
-          package: jshint
-          strict-ssl: false
+        package: jshint
+        strict-ssl: false
     - npm-install
     - npm-test
     - wercker/add-to-known_hosts@1.4.0
@@ -15,7 +15,7 @@ build:
     - script:
         name: initialize git submodules
         code: |
-            cd ..
-            git submodule update --init --recursive
+          cd ..
+          git submodule update --init --recursive
     - hgen/gulp:
         tasks: build

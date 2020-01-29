@@ -22,7 +22,7 @@
   display: inline-block;
   padding: 6px 12px;
   background: transparent;
-  background: rgba(0, 0, 0, .15);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 3px 0 0 3px;
 }
 .btn-label.btn-label-right {
@@ -178,7 +178,7 @@
   border: none;
   border-radius: 0;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 .navbar-offcanvas .navbar-nav {
   margin: 0;
@@ -483,8 +483,8 @@
   display: block;
 }
 .canvas-sliding {
-  -webkit-transition: top .35s, left .35s, bottom .35s, right .35s;
-          transition: top .35s, left .35s, bottom .35s, right .35s;
+  -webkit-transition: top 0.35s, left 0.35s, bottom 0.35s, right 0.35s;
+  transition: top 0.35s, left 0.35s, bottom 0.35s, right 0.35s;
 }
 .offcanvas-clone {
   position: absolute !important;

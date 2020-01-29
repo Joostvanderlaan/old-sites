@@ -17,22 +17,18 @@ before_install:
   - nvm install $NODE_VERSION
   - nvm use $NODE_VERSION
   - npm config set python `which python`
-  - if [ $TRAVIS_OS_NAME == "linux" ]; then
-      export CC="gcc-4.8";
-      export CXX="g++-4.8";
-      export LINK="gcc-4.8";
-      export LINKXX="g++-4.8";
-    fi
+  - if [ $TRAVIS_OS_NAME == "linux" ]; then export CC="gcc-4.8"; export CXX="g++-4.8"; export
+    LINK="gcc-4.8"; export LINKXX="g++-4.8"; fi
   - gcc --version
   - g++ --version
 # node 4 depends on gcc 4.8
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+      - ubuntu-toolchain-r-test
     packages:
-    - g++-4.8
-    - gcc-4.8
+      - g++-4.8
+      - gcc-4.8
 # script needed to test, because defaults don't work on osx
 script:
   - npm install

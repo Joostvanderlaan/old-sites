@@ -1,5 +1,3 @@
-layout: {{ layout }}
-title: {{ title }}
-date: {{ date }}
-tags:
+layout: {{ layout }} title: {{ title }} date: {{ date }} tags:
+
 ---
